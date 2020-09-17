@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<!--Para escalar-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    /*Aqui ponemos los estilos, lo he sacado cw3*/
+
+    /* Container for flexboxes */
+    section {
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+        section {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+    }
+
+    .leftcolumn {
+        width: 25%; /*Especificado en la practica*/
+        background-color: burlywood;
+        float: left;
+
+    }
+
+    .middlecolumn {
+        width: 50%; /*Especificado en la practica*/
+        background-color: rgb(73, 87, 209);
+        float: left;
+    }
+
+    .rightcolumn {
+        width: 25%; /*Especificado en la practica*/
+        background-color: rgb(59, 230, 96);
+        float: left;
+    }
+</style>
+
+<header>
+    <title>NASA Class</title>
+</header>
+
+<body>
+    <!--Cabecera-->
+    <section>
+        <picture>
+            <img src="images/logo.png" alt="NASA logo" style="width:250px;height:250px;">
+        </picture>
+        <h1>NASA Fundamentals Class</h1>
+        <ul>
+            <li>Perfil</li>
+            <li>Estadísticas</li>
+            <li>Más...</li>
+        </ul>
+    </section>
+    
+    <!--Cuerpo-->
+    <!--Columna Izquierda-->
+    <div class="leftcolumn">
+        <table>
+            <thead>
+                <b>NASA Fundamentals</b>
+            </thead>
+            <tbody>
+                <ul>
+                    <li>Listado de estudiantes</li>
+                    <li>Foro de la Asignatura</li>
+                    <li>Calificaciones</li>
+                </ul>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Columna Central-->
+    <div class="middlecolumn">
+        <table>
+            <thead>
+                <b>Temas de la Asignatura</b>
+            </thead>
+            <tbody>
+                <ul>
+                    <li>
+                        <img src="images/foundationsofaerospace.PNG" alt="Foundations" style="width:70px;height:70px;">
+                        <b>Foundations of Aerospace at NASA (APPEL-vFOU)</b>
+                        <br>Supporting NASA's mandate through technical excellence.
+                    </li>
+                    <li>
+                        <img src="images/fundamentalsofsystemengineering.PNG" alt="Fundamentals" style="width:70px;height:70px;">
+                        <b>Fundamentals of Systems Engineering (APPEL-FSE)</b>
+                        <br>Transforming operational needs into technical products.
+                    </li>
+                    <li>
+                        <img src="images/internationalprojectmanagement.PNG" alt="International" style="width:70px;height:70px;">
+                        <b>International Project Management (APPEL-IPM)</b>
+                        <br> Learn to effectively work with international partners.
+                    </li>
+                </ul>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Columna Derecha-->
+    <div class="rightcolumn">
+        <table>
+            <thead>
+                <b>Últimas novedades</b>
+            </thead>
+            <tbody>
+                <ul>
+                    <li>Publicación de material</li>
+                    <li>Mensajes del foro</li>
+                    <li>Otros recursos útiles</li>
+                    <li>
+                        Próximos eventos
+                        <ul>
+                            <li>Siguientes clases</li>
+                            <li>Entregas en el calendario</li>
+                        </ul>
+                    </li>
+                </ul>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
