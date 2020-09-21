@@ -1,0 +1,112 @@
+/*Aqui ponemos los estilos, lo he sacado cw3*/
+
+/*Makes sure that the padding and border are included in the total width and height of the elements.*/
+
+* {
+    box-sizing: border-box;
+}
+
+/* Container for flexboxes */
+
+section {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+
+@media (max-width: 600px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e7e7e7; /*Descomentar para ver el grid*/
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+li {
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid #e7e7e7; /*Descomentar para ver el grid*/
+    text-align: center;
+}
+
+li a {
+    padding: 8px;
+    background-color: #9ac5e7;
+}
+
+li a:hover {
+    background-color: rgb(149, 148, 248);
+  }
+
+li:hover {
+    background-color: rgb(178, 177, 248);
+  }
+
+
+/*LOGO*/
+
+.logo {
+    float: left;
+    width: 10%;
+    position: center;
+}
+
+/*CABECERA*/
+
+.indice {
+    background-color: rgb(216, 215, 236);
+    color: rgb(36, 33, 240);
+    padding: 10;
+    margin: 10;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 14pt;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+}
+
+/*COLUMNA IZQUIERDA*/
+
+.leftcolumn {
+    width: 25%;
+    overflow: auto;
+    /*Especificado en la practica*/
+    background-color: rgb(199, 208, 247);
+    font-size: 12pt;
+    float: left;
+}
+
+li .leftcolumn {
+    background-color: rgb(218, 223, 245);
+    color: white;
+}
+
+/*COLUMNA CENTRAL*/
+
+.middlecolumn {
+    width: 50%;
+    /*Especificado en la practica*/
+    background-color: rgb(220, 222, 241);
+    float: left;
+}
+
+/*COLUMNA DERECHA*/
+
+.rightcolumn {
+    width: 25%;
+    overflow: auto;
+    /*Especificado en la practica*/
+    background-color: rgb(199, 208, 247);
+    font-size: 12pt;
+    float: left;
+}

@@ -1,65 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-<!--Para escalar-->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <!-- Para refrescar la página -->
+    <META HTTP-EQUIV="refresh" CONTENT="7">
+    <!--Para escalar-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/class.css">
 
-<style>
-    /*Aqui ponemos los estilos, lo he sacado cw3*/
-
-    /* Container for flexboxes */
-    section {
-        display: -webkit-flex;
-        display: flex;
-    }
-
-    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-    @media (max-width: 600px) {
-        section {
-            -webkit-flex-direction: column;
-            flex-direction: column;
-        }
-    }
-
-    .leftcolumn {
-        width: 25%; /*Especificado en la practica*/
-        background-color: burlywood;
-        float: left;
-
-    }
-
-    .middlecolumn {
-        width: 50%; /*Especificado en la practica*/
-        background-color: rgb(73, 87, 209);
-        float: left;
-    }
-
-    .rightcolumn {
-        width: 25%; /*Especificado en la practica*/
-        background-color: rgb(59, 230, 96);
-        float: left;
-    }
-</style>
-
-<header>
-    <title>NASA Class</title>
-</header>
+    <header>
+        <title>NASA Fundamentals Class</title>
+    </header>
 
 <body>
     <!--Cabecera-->
-    <section>
-        <picture>
-            <img src="images/logo.png" alt="NASA logo" style="width:250px;height:250px;">
-        </picture>
-        <h1>NASA Fundamentals Class</h1>
+    <!-- Menú de enlaces internos -->
+    <div class="indice">
+        <div class="logo">
+            <picture>
+                <img src="images/logo.png" alt="NASA logo" style="width:100px;height:100px;">
+            </picture>
+        </div>
         <ul>
-            <li>Perfil</li>
-            <li>Estadísticas</li>
-            <li>Más...</li>
+            <li>
+                <h1>NASA Fundamentals Class</h1>
+            </li>
+            <li>
+                <a href="#C1">Perfil</a>
+                <a href="#C2">Estadísticas</a>
+                <a href="#C3">Más...</a>
+            </li>
         </ul>
+    </div>
     </section>
-    
+
     <!--Cuerpo-->
     <!--Columna Izquierda-->
     <div class="leftcolumn">
@@ -91,12 +66,14 @@
                         <br>Supporting NASA's mandate through technical excellence.
                     </li>
                     <li>
-                        <img src="images/fundamentalsofsystemengineering.PNG" alt="Fundamentals" style="width:70px;height:70px;">
+                        <img src="images/fundamentalsofsystemengineering.PNG" alt="Fundamentals"
+                            style="width:70px;height:70px;">
                         <b>Fundamentals of Systems Engineering (APPEL-FSE)</b>
                         <br>Transforming operational needs into technical products.
                     </li>
                     <li>
-                        <img src="images/internationalprojectmanagement.PNG" alt="International" style="width:70px;height:70px;">
+                        <img src="images/internationalprojectmanagement.PNG" alt="International"
+                            style="width:70px;height:70px;">
                         <b>International Project Management (APPEL-IPM)</b>
                         <br> Learn to effectively work with international partners.
                     </li>
@@ -129,5 +106,7 @@
     </div>
 
 </body>
+
+</head>
 
 </html>
