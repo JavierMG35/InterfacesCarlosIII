@@ -92,10 +92,14 @@ li:hover {
 }
 
 li .leftcolumn {
-    background-color: rgb(218, 223, 245);
+    /*background-color: rgb(218, 223, 245);*/
+    background-color: red;
     color: white;
 }
 
+a:link{
+    width: 100%;
+}
 /*COLUMNA CENTRAL*/
 
 .middlecolumn {
@@ -115,3 +119,12 @@ li .leftcolumn {
     font-size: 12pt;
     float: left;
 }
+
+
+
+/* tabla Izquierda*/
+
+/*table#tablaIzquierda ul li a{
+    background-color: #9ac5e7;
+
+}*/
