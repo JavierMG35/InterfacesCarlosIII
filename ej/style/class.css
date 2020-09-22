@@ -51,6 +51,11 @@ li:hover {
     background-color: rgb(178, 177, 248);
   }
 
+.navbar-icons{
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+}
 
 /*LOGO*/
 
