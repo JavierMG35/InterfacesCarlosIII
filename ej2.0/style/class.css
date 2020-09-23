@@ -18,16 +18,49 @@ header>img{
 }
 
 header>h1{
-    float:left;
     margin-right: 100px;
     font-family: 'Times New Roman', Times, serif;
 
 }
 
 header>nav{
-    float: right;
     font-family: 'Times New Roman', Times, serif;
     border-style: solid;
     border-width: 2px;
 
+}
+
+/*Referente al footer*/
+footer {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    margin-top: 10px;
+}
+
+footer>a>img{
+    max-width: 50px;
+    max-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Referente a columna izq*/
+#columnaizq{
+    display: flex;
+    width: 25%;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*Referente a columna cent*/
+#columnacent{
+    display: flex;
+    width: 50%;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
