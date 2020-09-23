@@ -1,0 +1,33 @@
+/*Todo lo referente al estilo del header*/
+header{
+    display: flex;
+    align-items: center;
+    background-color: #0d6baa;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2px;
+}
+
+header>img{
+    float:left;
+    max-width:100px;
+    max-height:100px;
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+header>h1{
+    float:left;
+    margin-right: 100px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+header>nav{
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: solid;
+    border-width: 2px;
+
+}
