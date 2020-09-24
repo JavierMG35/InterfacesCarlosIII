@@ -2,10 +2,12 @@
 header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #0d6baa;
     border-style: solid;
     border-color: #000000;
     border-width: 2px;
+    padding:10px;
 }
 
 header>img{
@@ -18,16 +20,44 @@ header>img{
 }
 
 header>h1{
-    margin-right: 100px;
     font-family: 'Times New Roman', Times, serif;
 
 }
 
 header>nav{
-    font-family: 'Times New Roman', Times, serif;
     border-style: solid;
-    border-width: 2px;
+    margin-right: 10px;
+    padding: 10px;
+}
 
+#cuerpo{
+    display: flex;
+    align-items: center;
+}
+
+/*Referente a columna izq*/
+#columnaizq{
+    width: 25%;
+    border-style: solid;
+    margin-top: 10px;
+}
+
+/*Referente a columna cent*/
+#columnacent{
+    width: 50%;
+    border-style: solid;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Referente a columna cent*/
+#columnaderecha{
+    width: 25%;
+    border-style: solid;
+    margin-top: 10px;
+    padding: 10px;
 }
 
 /*Referente al footer*/
@@ -36,31 +66,5 @@ footer {
     align-items: center;
     border-style: solid;
     margin-top: 10px;
-}
-
-footer>a>img{
-    max-width: 50px;
-    max-height: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-/*Referente a columna izq*/
-#columnaizq{
-    display: flex;
-    width: 25%;
-    border-style: solid;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-/*Referente a columna cent*/
-#columnacent{
-    display: flex;
-    width: 50%;
-    border-style: solid;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding:10px;
 }
