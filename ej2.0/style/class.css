@@ -1,27 +1,25 @@
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(11,61,145,1) 100%);
+}
+
+
 /*Todo lo referente al estilo del header*/
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #0d6baa;
     border-style: solid;
-    border-color: #000000;
-    border-width: 2px;
+    border-color: #ffffff;
+    border-width: 1px;
     padding:10px;
+    margin-bottom:10px;
 }
 
 header>img{
     float:left;
     max-width:100px;
     max-height:100px;
-	margin-left:10px;
-	margin-top:10px;
-	margin-bottom:10px;
-}
-
-header>h1{
-    font-family: 'Times New Roman', Times, serif;
-
+    margin:10px;
 }
 
 header>nav{
@@ -30,42 +28,45 @@ header>nav{
     padding: 10px;
 }
 
-#cuerpo{
+.cuerpo{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
-/*Referente a columna izq*/
-#columnaizq{
+/*Referente a columna lateral*/
+.columnalateral{
     width: 25%;
     border-style: solid;
-    margin-top: 10px;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.columnalateral table tr td {
+    padding-bottom: 5px; /*Separacion de letras*/
 }
 
 /*Referente a columna cent*/
-#columnacent{
+.columnacent{
     width: 50%;
     border-style: solid;
-    margin-top: 10px;
+    border-color: #808080;
+    border-width: 2px;
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-/*Referente a columna cent*/
-#columnaderecha{
-    width: 25%;
-    border-style: solid;
-    margin-top: 10px;
-    padding: 10px;
-}
-
 /*Referente al footer*/
 footer {
-    display: flex;
     text-align: center;
-    justify-content: space-around;
     border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    padding: 10px;
     margin-top: 10px;
-    padding:10px;
+}
+
+footer>nav>a{
+    margin-right: 2px;
 }
