@@ -31,7 +31,6 @@ header nav{
 
 .cuerpo{
     display: flex;
-    text-align: justify;
 }
 
 /*Referente a columna lateral*/
@@ -50,6 +49,7 @@ header nav{
 /*Referente a columna cent*/
 .columnacent{
     display: flex;
+    flex-direction: column;
     width: 50%;
     border-style: solid;
     border-color: #808080;
@@ -64,14 +64,28 @@ header nav{
 }
 
 .tema img {
-    width: 30%;
-    height: 30%;
-    margin:10px;
+    width: 70%;
+    height: 70%;
     object-fit: contain;
+    margin-right: 10px;
 }
 
 .tema h3 {
     margin-top: auto;
+}
+
+.videos {
+    display: flex;
+    
+}
+
+.videos video{
+    max-width: 75%;
+    max-height: 70%;
+    margin-right: 10px;
+}
+.info-videos{
+    margin-left: 10px;
 }
 
 /*Referente al footer*/
