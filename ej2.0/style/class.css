@@ -15,14 +15,13 @@ header{
     margin-bottom:10px;
 }
 
-header>img{
-    float:left;
+header img{
     max-width:100px;
     max-height:100px;
     margin:10px;
 }
 
-header>nav{
+header nav{
     border-style: solid;
 	border-width: 1px;
 	border-color: #ffffff;
@@ -32,7 +31,7 @@ header>nav{
 
 .cuerpo{
     display: flex;
-    align-items: flex-start;
+    text-align: justify;
 }
 
 /*Referente a columna lateral*/
@@ -50,6 +49,7 @@ header>nav{
 
 /*Referente a columna cent*/
 .columnacent{
+    display: flex;
     width: 50%;
     border-style: solid;
     border-color: #808080;
@@ -57,6 +57,21 @@ header>nav{
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.tema {
+    display: flex;
+}
+
+.tema img {
+    width: 30%;
+    height: 30%;
+    margin:10px;
+    object-fit: contain;
+}
+
+.tema h3 {
+    margin-top: auto;
 }
 
 /*Referente al footer*/
@@ -72,6 +87,6 @@ footer {
     padding: 5px;
 }
 
-footer>nav>a{
+footer nav a {
     margin-right: 2px;
 }
