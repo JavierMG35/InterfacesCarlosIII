@@ -77,8 +77,7 @@ header nav{
 }
 
 .videos {
-   display: flex;
-    
+   display: flex;  
 }
 
 .videos video{
@@ -90,12 +89,39 @@ header nav{
     margin-left: 10px;
 }
 
+/*Referente a cada student*/
+.student {
+    display: flex;
+    flex-direction: column;
+}
+
+.student img{
+    object-fit: contain;
+    width:80px;
+    height:100px;
+}
+.student input{
+    margin-bottom: 20px;
+}
+
+/*Referente a Calificaciones*/
+.calificaciones table{
+    border-spacing: 0;
+}
+.calificaciones table td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.calificaciones table th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
 /*Referente al footer*/
 footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
     text-align: center;
     border-top: solid;
     border-color: #ffffff;
