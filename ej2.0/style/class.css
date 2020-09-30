@@ -105,6 +105,9 @@ header nav{
 }
 
 /*Referente a Calificaciones*/
+.calificaciones{
+    margin: auto;
+}
 .calificaciones table{
     border-spacing: 0;
 }
