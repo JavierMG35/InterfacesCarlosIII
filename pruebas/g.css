@@ -1,18 +1,29 @@
-body{
+html{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(11,61,145,1) 100%);
+}
+
+body{
+    width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-color: orange;
+	border-style: groove;
+	border-width: 20px;
+	padding: 2%;
 }
 
 
 /*Todo lo referente al estilo del header*/
 header{
-    display: flex;
+    position: fixed;
+    display: inline-block;
     align-items: center;
     justify-content: space-between;
     border-style: solid;
-    border-color: #ffffff;
+    border-color: #000000;
     border-width: 1px;
     padding:10px;
-    margin-bottom:10px;
+    margin: 10px;
     border-radius: 25px;
 }
 
@@ -30,18 +41,54 @@ header nav{
     padding: 10px;
 }
 
-.cuerpo{
-    display: flex;
+#cuerpo {
+    position: sticky;
+    height: 100%;
+    margin-bottom: 35px;
 }
 
 /*Referente a columna lateral*/
-.columnalateral{
+.columnaizquierda{
+    /*flex: 0 0 auto;*/
     width: 25%;
     border-style: solid;
     border-color: #808080;
     border-width: 2px;
     padding: 10px;
     border-radius: 25px;
+    font-size: 13pt;
+	height:auto;
+	position:sticky;
+    float:left;
+    position: fixed;
+}
+
+/*Referente a columna cent*/
+.columnacent{
+    position: relative;
+    margin-left: 25%;
+    width:50%;
+    scroll-behavior: auto;
+    border-style: solid;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 25px;
+	float:right;
+}
+
+.columnaderecha{
+    /*flex: 0 0 auto; */
+    width:25%;
+    margin-right: 10px;
+    border-style: solid;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 25px;
+    position: fixed;
+    right: 0;
+    box-sizing: border-box;
     margin-bottom: 30px;
 }
 
@@ -49,24 +96,8 @@ header nav{
     padding-bottom: 5px; /*Separacion de letras*/
 }
 
-/*Referente a columna cent*/
-.columnacent{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    border-style: solid;
-    border-color: #808080;
-    border-width: 2px;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 25px;
-    margin-bottom: 30px;
-}
-
-
 .tema {
-    position: relative;
+    display: flex;
 }
 
 .tema img {
@@ -77,7 +108,7 @@ header nav{
 }
 
 .videos {
-   display: flex;
+    display: flex;
     
 }
 
