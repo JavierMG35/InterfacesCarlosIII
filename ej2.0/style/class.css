@@ -101,6 +101,7 @@ header nav{
     object-fit: contain;
     width:80px;
     height:100px;
+    float: left;
 }
 .student input{
     margin-top: 10px;
@@ -124,6 +125,30 @@ header nav{
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+/*Referente a forum*/
+.forum{
+    margin: auto;
+}
+.forum table{
+    border-spacing: 0;
+}
+.forum table td{
+    border: 1px solid #cac7c7;
+    text-align: left;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.forum table th{
+    border: 1px solid #535353;
+    text-align: left;
+    padding: 8px;
+    border-radius: 25px;
+}
+.forum table td:hover{
+    border-color: #000;
 }
 
 /*Referente al footer*/
