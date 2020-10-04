@@ -1,7 +1,37 @@
 body{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(11,61,145,1) 100%);
+    font-family: "Calibri"; /*Just testing fonts*/
 }
 
+/* Breakpoints */
+/* Versión Tablet */
+@media only screen and (max-width: 768px) {
+    
+    .columnacent{
+        width: 75%;
+        float: right;
+    }
+
+    .columnaderecha{
+        display: none;
+    }
+    
+    .tablet{
+        visibility: visible;
+    }
+    }
+
+/* Versión Móvil  */
+@media only screen and (max-width: 600px) {
+
+    
+    }
+
+
+/*Tablet menu en modo pc*/
+.tablet{
+    visibility: hidden;
+}
 
 /*Todo lo referente al estilo del header*/
 header{
@@ -34,8 +64,24 @@ header nav{
     display: flex;
 }
 
-/*Referente a columna lateral*/
-.columnalateral{
+/*Referente a columna lateral izquierda*/
+.columnaizquierda{
+    width: 25%;
+    border-style: solid;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-size: large;
+}
+
+.columnaizquierda table tr td {
+    padding-bottom: 5px; /*Separacion de letras*/
+}
+
+/*Referente a columna lateral derecha*/
+.columnaderecha{
     width: 25%;
     border-style: solid;
     border-color: #808080;
@@ -45,7 +91,7 @@ header nav{
     margin-bottom: 30px;
 }
 
-.columnalateral table tr td {
+.columnaderecha table tr td {
     padding-bottom: 5px; /*Separacion de letras*/
 }
 
