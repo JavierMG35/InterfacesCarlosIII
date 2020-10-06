@@ -3,36 +3,6 @@ body{
     font-family: "Calibri"; /*Just testing fonts*/
 }
 
-/* Breakpoints */
-/* Versión Tablet */
-@media only screen and (max-width: 768px) {
-    
-    .columnacent{
-        width: 75%;
-        float: right;
-    }
-
-    .columnaderecha{
-        display: none;
-    }
-    
-    .tablet{
-        visibility: visible;
-    }
-    }
-
-/* Versión Móvil  */
-@media only screen and (max-width: 600px) {
-
-    
-    }
-
-
-/*Tablet menu en modo pc*/
-.tablet{
-    visibility: hidden;
-}
-
 /*Todo lo referente al estilo del header*/
 header{
     display: flex;
@@ -209,3 +179,47 @@ footer {
 footer nav a {
     margin-right: 2px;
 }
+
+/* Breakpoints */
+/* Versión Tablet */
+@media only screen and (max-width: 768px) {
+   
+    .columnaderecha{
+        display: none;
+    }
+
+    .columnacent{
+        width: 75%;
+    }
+
+    .tema img{
+        display: none;
+    }
+
+    .videos {
+        flex-direction: column;
+    }
+
+    .videos video{
+        order: 1;
+        margin-top: auto;
+        max-width: 100%;
+    }
+
+
+    
+    .tablet{
+        visibility: visible;
+    }
+    }
+
+/* Versión Móvil  */
+@media only screen and (max-width: 600px) {
+
+    
+    }
+/*Tablet menu en modo pc*/
+.tablet{
+    visibility: hidden;
+}
+
