@@ -183,7 +183,14 @@ footer nav a {
 /* Breakpoints */
 /* Versión Tablet */
 @media only screen and (max-width: 768px) {
-   
+
+    header nav{
+        display: none;
+    }
+    
+    header {
+        justify-content: unset;
+    }
     .columnaderecha{
         display: none;
     }
