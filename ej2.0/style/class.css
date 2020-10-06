@@ -50,6 +50,11 @@ header nav{
     padding-bottom: 5px; /*Separacion de letras*/
 }
 
+/*Tablet menu en modo pc*/
+.tablet{
+    visibility: hidden;
+} 
+
 /*Referente a columna lateral derecha*/
 .columnaderecha{
     width: 25%;
@@ -180,6 +185,7 @@ footer nav a {
     margin-right: 2px;
 }
 
+
 /* Breakpoints */
 /* Versión Tablet */
 @media only screen and (max-width: 768px) {
@@ -213,20 +219,16 @@ footer nav a {
         max-width: 100%;
     }
 
-
-    
-    .tablet{
+    .tablet {
         visibility: visible;
     }
-    }
+    
+}
 
 /* Versión Móvil  */
 @media only screen and (max-width: 600px) {
 
     
     }
-/*Tablet menu en modo pc*/
-.tablet{
-    visibility: hidden;
-}
+
 
