@@ -6,5 +6,6 @@ Nicolas Granados Sitges.
 Javier Moncada Gutierrez.
 
 TODO:
-
+    - mejorar lo que veamos
+    - preparar paquete subida (borrada carpeta pruebas mias xdd, eso ya se hara easy con javacript imagino)
 
