@@ -1,201 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!--<META HTTP-EQUIV="refresh" CONTENT="2">-->
-        <!--Para escalar-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style/class.css">
-        <title>NASA Fundamentals Class</title>
-    </head>
-    <body>
-        <header>
-            <div class="mobile">
-                <button class="dropbtn"><img src="images/hamburguericon.png" alt="mobilemenu"></button>
-                <div class="mobile-content">
-                    <a href="students.html" title="Students">Students</a>
-                    <a href="forum.html" title="Forum">Forum</a>
-                    <a href="grades.html" title="Grades">Grades</a>
-                    <a href=#c1 title="Last News">Last News</a>
-                    <a href=#c2 title="Last Events">Last Events</a>
-                </div>
+   <head>
+      <!--<META HTTP-EQUIV="refresh" CONTENT="2">-->
+      <!--Para escalar-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="style/class.css">
+      <script type="text/javascript" src="script/main.js"></script>
+      <script type="text/javascript" src="script/jquery-3.5.1.js"></script>
+      <script type="text/javascript" src="script/jquery-ui.js"></script>
+      <title>NASA Fundamentals Class</title>
+   </head>
+   <body>
+      <header>
+         <div class="mobile">
+            <button class="dropbtn"><img src="images/hamburguericon.png" alt="mobilemenu"></button>
+            <div class="mobile-content">
+               <a href="students.html" title="Students">Students</a>
+               <a href="forum.html" title="Forum">Forum</a>
+               <a href="grades.html" title="Grades">Grades</a>
+               <a href=#c1 title="Last News">Last News</a>
+               <a href=#c2 title="Last Events">Last Events</a>
             </div>
-            <a class="logo" href="class.html"><img src="images/logo.png" alt="logo"></a>
-            <h1>NASA Fundamentals Class</h1>
-            <nav>
+         </div>
+         <a class="logo" href="class.html"><img src="images/logo.png" alt="logo"></a>
+         <h1>NASA Fundamentals Class</h1>
+         <nav>
+            <table>
+               <tr>
+                  <td><a href="class.html" title="Home">Home</a></td>
+                  <td><a href="https://www.nasa.gov/" title="Opt2">NASA</a></td>
+                  <td><a href="https://www.wooclap.com/es/" title="Opt3">Wooclap</a></td>
+               </tr>
+            </table>
+         </nav>
+      </header>
+      <div class="cuerpo">
+         <div class="columnaizquierda">
+            <table>
+               <tr>
+                  <th>NASA Fundamentals Class</th>
+               </tr>
+               <tr>
+                  <td><a href="#c6" onclick = "displayStudents()" title="Students">Students</a></td>
+               </tr>
+               <tr>
+                  <td><a href="#c5" onclick = "displayForum()" title="Forum">Forum</a></td>
+               </tr>
+               <tr>
+                  <td><a href="#c4" onclick = "displayGrades()" title="Grades">Grades</a></td>
+               </tr>
+               <tr>
+                  <td><a href="#c3" onclick = "displayClases()" title="Clases">Clases</a></td>
+               </tr>
+               <tr class="tablet">
+                  <td><a href=#c1 title="Last News">Last News</a></td>
+               </tr>
+               <tr class="tablet">
+                  <td><a href=#c2 title="Last Events">Last Events</a></td>
+               </tr>
+            </table>
+         </div>
+         <div class="columnacent">
+            <div class = "listado">
+                <h3>Listado de Estudiantes</h3>
+                <div class="student">
+                   <img src="images/student1.png" alt="student1">
+                   <b>Nombre:</b> Alicia Martínez Sánchez
+                   <b>Fecha de nacimiento:</b> 22/04/1990
+                   <b>Email:</b> aliciamartinezsanchez@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text"></b>
+                </div>
+                <div class="student">
+                   <img src="images/student2.png" alt="student2">
+                   <b>Nombre:</b> Juan Jerry Wong
+                   <b>Fecha de nacimiento:</b> 20/04/2020
+                   <b>Email:</b> jerryforlife@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text"></b>
+                </div>
+                <div class="student">
+                   <img src="images/student3.png" alt="student3">
+                   <b>Nombre:</b> Apolo Creed Balboa
+                   <b>Fecha de nacimiento:</b> 01/01/1969
+                   <b>Email:</b> thisisamerica@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student4.png" alt="student4">
+                   <b>Nombre:</b> Mike Wazowski
+                   <b>Fecha de nacimiento:</b> 02/02/2002
+                   <b>Email:</b> monstersa@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student5.png" alt="student5">
+                   <b>Nombre:</b> Malena Malina
+                   <b>Fecha de nacimiento:</b> 22/22/1922
+                   <b>Email:</b> malenamalina@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student6.png" alt="student6">
+                   <b>Nombre:</b> Juan Nuaj Jin
+                   <b>Fecha de nacimiento:</b> 19/02/2019
+                   <b>Email:</b> moc.liamg@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student7.png" alt="student7">
+                   <b>Nombre:</b> Quasi Modo Eiffel
+                   <b>Fecha de nacimiento:</b> 05/05/1789
+                   <b>Email:</b> vivelarevolution@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student8.png" alt="student8">
+                   <b>Nombre:</b> Katerina Tolstoy Putin
+                   <b>Fecha de nacimiento:</b> 01/01/1969
+                   <b>Email:</b> ilovesiberia@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student9.png" alt="student9">
+                   <b>Nombre:</b> Mr Profident
+                   <b>Fecha de nacimiento:</b> 24/09/1998
+                   <b>Email:</b> fann1colgate@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+                <div class="student">
+                   <img src="images/student10.png" alt="student10">
+                   <b>Nombre:</b> Julie Andrews
+                   <b>Fecha de nacimiento:</b> 10/10/1965
+                   <b>Email:</b> thesoundofmusic@gmail.com
+                   <b>Enviar Mensaje: <input name="Mensaje" placeholder="Escribe tu mensaje" type="text" ></b>
+                </div>
+             </div>
+            <div class="calificaciones">
                 <table>
                     <tr>
-                        <td><a href="class.html" title="Home">Home</a></td>
-                        <td><a href="https://www.nasa.gov/" title="Opt2">NASA</a></td>
-                        <td><a href="https://www.wooclap.com/es/" title="Opt3">Wooclap</a></td>
+                        <th>Estudiante</th>
+                        <th>Actividad 1</th>
+                        <th>Actividad 2</th>
+                        <th>Actividad 3</th>
+                    </tr>
+                    <tr>
+                        <td>Alicia Martínez Sánchez</td>
+                        <td>7.00</td>
+                        <td>6.00</td>
+                        <td>8.50</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Jerry Wong</td>
+                        <td>2.50</td>
+                        <td>3.50</td>
+                        <td>4.55</td>
+                    </tr>
+                    <tr>
+                        <td>Apolo Creed Balboa</td>
+                        <td>7.75</td>
+                        <td>8.35</td>
+                        <td>9.25</td>
+                    </tr>
+                    <tr>
+                        <td>Mike Wazowski</td>
+                        <td>10.00</td>
+                        <td>10.00</td>
+                        <td>10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Malena Malina</td>
+                        <td>5.00</td>
+                        <td>4.55</td>
+                        <td>6.00</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Nuaj Jin</td>
+                        <td>6.90</td>
+                        <td>4.20</td>
+                        <td>6.66</td>
+                    </tr>
+                    <tr>
+                        <td>Quasi Modo Eiffel</td>
+                        <td>8.80</td>
+                        <td>7.77</td>
+                        <td>5.45</td>
+                    </tr>
+                    <tr>
+                        <td>Katerina Tolstoy Putin</td>
+                        <td>9.88</td>
+                        <td>7.35</td>
+                        <td>10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Mr Profident</td>
+                        <td>10.00</td>
+                        <td>9.50</td>
+                        <td>7.75</td>
+                    </tr>
+                    <tr>
+                        <td>Julie Andrews</td>
+                        <td>7.50</td>
+                        <td>6.00</td>
+                        <td>5.00</td>
                     </tr>
                 </table>
-            </nav>
-        </header>
-        <div class="cuerpo">
-            <div class="columnaizquierda">
-                <table>
-                    <tr>
-						<th>NASA Fundamentals Class</th>
-                    </tr>
-                    <tr>
-                        <td><a href="students.html" title="Students">Students</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="forum.html" title="Forum">Forum</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="grades.html" title="Grades">Grades</a></td>
-                    </tr>
-                    <tr class="tablet">
-                        <td><a href=#c1 title="Last News">Last News</a></td>
-                    </tr>
-                    <tr class="tablet">
-                        <td><a href=#c2 title="Last Events">Last Events</a></td>
-                    </tr>
-                </table>
             </div>
-            <div class="columnacent">
-                <div class="tema">
-                    <img src="images/foundationsofaerospace.png" alt="foundationsofaerospace">
-                    <div class="info-tema">
-                        <h3>Foundations of Aerospace</h3>
-                        <p>Attendees will gain an understanding of the fundamentals of aeronautics and astronautics, as well as an appreciation for the interdependence of key space mission elements.</p>
-                    </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/foundationsOfAerospace1.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>Intro to foundations of Aerospace</h3>
-                            <p>Describe NASA’s contributions to the aeronautics industry.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/foundationsOfAerospace2.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>Intro to Aerospace Engineering</h3>
-                            <p>Explain the relationship between basic aircraft functions and aircraft design.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/foundationsOfAerospace3.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>How does a rocket work?</h3>
-                            <p>Describe basic aircraft functions including aerodynamics, stability and control, structures, propulsion, and performance.</p>
-                        </div>
-                </div>
-                <div class="tema">
-                    <img src="images/fundamentalsofsystemengineering.PNG" alt="fundamentalsofsystemengineering">
-                    <div class="info-tema">
-                        <h3>Fundamentals of System Engineering</h3>
-                        <p>Systems engineering focuses on the interfaces among the people, processes, and products that are often outside the responsibility of any one function or discipline. This course equips your teams with the knowledge necessary to realize successful solutions.</p>
-                    </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/systemsEngineering1.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>Intro to Fundamentals of System Engineering</h3>
-                            <p>Calculate basic orbit and system parameters that drive mission scope and cost.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/systemsEngineering2.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>What is "Systems Engineering"?</h3>
-                            <p>Define and describe important astronautics terms and concepts including those related to the space environment; orbit description, prediction and maneuvering; and payload and spacecraft design.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/systemsEngineering3.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>Guest Talk: Day in the life of a Systems Engineering: Steve Smith </h3>
-                            <p>Explain the process for system requirements development and management.</p>
-                        </div>
-                </div>
-                <div class="tema">
-                    <img src="images/internationalprojectmanagement.PNG" alt="internationalprojectmanagement">
-                    <div class="info-tema">
-                        <h3>International Project Management</h3>
-                        <p>This course provides project practitioners with an understanding of cultural challenges, legal concerns, and teaming issues that are likely to be encountered when working with international partners.</p>
-                    </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/projectManagement1.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>Intro to international Project Management</h3>
-                            <p>Recognize and appreciate the project management approaches of the European Space Agency (ESA), Japan Aerospace Exploration Agency (JAXA), and NASA as well as several other space agencies and companies who support them.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/projectManagement2.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>What is Project Management?</h3>
-                            <p>Apply behaviors associated with the “softer” side of cross-cultural relations needed to be effective in the International Project Management arena.</p>
-                        </div>
-                </div>
-                <div class="videos">
-                    <video controls>
-                        <source src="images/projectManagement3.mp4" type="video/mp4">
-                    </video>
-                        <div class="info-videos">
-                            <h3>What Does a Project Manager Do</h3>
-                            <p>Analyze product and project risk and mitigation based upon NASA policies and practices.</p>
-                        </div>
-                </div>
+            <div class="forum">
+               <table>
+                  <tr>
+                     <th>Tema:</th>
+                     <th colspan="2">Mensajes:</th>
+                     <th>Fecha:</th>
+                  </tr>
+                  <tr>
+                     <td colspan="2">Need help with Project 1</td>
+                     <td>11 messages </td>
+                     <td>09/09/20 13:21</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2"><b>Additional Exercise</b></td>
+                     <td>1 message</td>
+                     <td>6/09/20 16:20</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">Did you hear about life in Venus?</td>
+                     <td>150 messages</td>
+                     <td>07/10/20 00:00</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">Who eated Mr. Jeff sandwich??</td>
+                     <td>5 messages</td>
+                     <td>29/05/20 10:05</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2"><b>News and updates</b></td>
+                     <td>2 messages</td>
+                     <td>21/09/20</td>
+                  </tr>
+               </table>
             </div>
-            <div class="columnaderecha">
-                <table>
-                    <tr>
-                        <th>Last News</th>
-                    </tr>
-                    <tr>
-                        <td>10/09-New class videos uploaded</td>
-                    </tr>
-                    <tr>
-                        <td>09/09-New topic added</td>
-                    </tr>
-                    <tr>
-                        <td>09/09-New messages in the forum</td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th>Next Events</th>
-                    </tr>
-                    <tr>
-                        <td>11/09-Mid-term exam</td>
-                    </tr>
-                    <tr>
-                        <td>15/09-Project 1 due date</td>
-                    </tr>
-                    <tr>
-                        <td>16/09-Final exam</td>
-                    </tr>
-                </table>				
+            <div class="clases">
+               <div class="tema">
+                  <img src="images/foundationsofaerospace.png" alt="foundationsofaerospace">
+                  <div class="info-tema">
+                     <h3>Foundations of Aerospace</h3>
+                     <p>Attendees will gain an understanding of the fundamentals of aeronautics and astronautics, as well as an appreciation for the interdependence of key space mission elements.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/foundationsOfAerospace1.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>Intro to foundations of Aerospace</h3>
+                     <p>Describe NASA’s contributions to the aeronautics industry.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/foundationsOfAerospace2.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>Intro to Aerospace Engineering</h3>
+                     <p>Explain the relationship between basic aircraft functions and aircraft design.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/foundationsOfAerospace3.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>How does a rocket work?</h3>
+                     <p>Describe basic aircraft functions including aerodynamics, stability and control, structures, propulsion, and performance.</p>
+                  </div>
+               </div>
+               <div class="tema">
+                  <img src="images/fundamentalsofsystemengineering.PNG" alt="fundamentalsofsystemengineering">
+                  <div class="info-tema">
+                     <h3>Fundamentals of System Engineering</h3>
+                     <p>Systems engineering focuses on the interfaces among the people, processes, and products that are often outside the responsibility of any one function or discipline. This course equips your teams with the knowledge necessary to realize successful solutions.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/systemsEngineering1.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>Intro to Fundamentals of System Engineering</h3>
+                     <p>Calculate basic orbit and system parameters that drive mission scope and cost.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/systemsEngineering2.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>What is "Systems Engineering"?</h3>
+                     <p>Define and describe important astronautics terms and concepts including those related to the space environment; orbit description, prediction and maneuvering; and payload and spacecraft design.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/systemsEngineering3.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>Guest Talk: Day in the life of a Systems Engineering: Steve Smith </h3>
+                     <p>Explain the process for system requirements development and management.</p>
+                  </div>
+               </div>
+               <div class="tema">
+                  <img src="images/internationalprojectmanagement.PNG" alt="internationalprojectmanagement">
+                  <div class="info-tema">
+                     <h3>International Project Management</h3>
+                     <p>This course provides project practitioners with an understanding of cultural challenges, legal concerns, and teaming issues that are likely to be encountered when working with international partners.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/projectManagement1.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>Intro to international Project Management</h3>
+                     <p>Recognize and appreciate the project management approaches of the European Space Agency (ESA), Japan Aerospace Exploration Agency (JAXA), and NASA as well as several other space agencies and companies who support them.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/projectManagement2.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>What is Project Management?</h3>
+                     <p>Apply behaviors associated with the “softer” side of cross-cultural relations needed to be effective in the International Project Management arena.</p>
+                  </div>
+               </div>
+               <div class="videos">
+                  <video controls>
+                     <source src="images/projectManagement3.mp4" type="video/mp4">
+                  </video>
+                  <div class="info-videos">
+                     <h3>What Does a Project Manager Do</h3>
+                     <p>Analyze product and project risk and mitigation based upon NASA policies and practices.</p>
+                  </div>
+               </div>
             </div>
-        </div>
-        <footer>
-            <nav>
-                <a href="https://www.uc3m.es/Inicio" title="UC3M" target="_blank">UC3M</a>
-                <a href="https://copyright.es/" title="Copyright" target="_blank">©</a>
-                <a href="https://policies.google.com/privacy?hl=es" title="Privacidad" target="_blank">Privacidad</a>
-            </nav>
-        </footer>
-    </body>
+         </div>
+         <div class="columnaderecha">
+            <table>
+               <tr>
+                  <th>Last News</th>
+               </tr>
+               <tr>
+                  <td>10/09-New class videos uploaded</td>
+               </tr>
+               <tr>
+                  <td>09/09-New topic added</td>
+               </tr>
+               <tr>
+                  <td>09/09-New messages in the forum</td>
+               </tr>
+            </table>
+            <table>
+               <tr>
+                  <th>Next Events</th>
+               </tr>
+               <tr>
+                  <td>11/09-Mid-term exam</td>
+               </tr>
+               <tr>
+                  <td>15/09-Project 1 due date</td>
+               </tr>
+               <tr>
+                  <td>16/09-Final exam</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <footer>
+         <nav>
+            <a href="https://www.uc3m.es/Inicio" title="UC3M" target="_blank">UC3M</a>
+            <a href="https://copyright.es/" title="Copyright" target="_blank">©</a>
+            <a href="https://policies.google.com/privacy?hl=es" title="Privacidad" target="_blank">Privacidad</a>
+         </nav>
+      </footer>
+   </body>
 </html>
