@@ -1,3 +1,15 @@
+
+//Funcionaldiad botón exportar
+$(function(){
+  $("#exportar").click(function(){
+    $("#tabla_exportar").tableToCSV();
+  });
+});
+
+function enviarMensaje(mail) {
+  window.open("mailto:" + mail)
+}
+
 function displayClases() {
     document.getElementsByClassName("clases")[0].style.display = "block"
     document.getElementsByClassName("forum")[0].style.display = "none"
@@ -25,3 +37,4 @@ function displayGrades() {
     document.getElementsByClassName("calificaciones")[0].style.display = "block"
     document.getElementsByClassName("listado")[0].style.display = "none"
 }
+

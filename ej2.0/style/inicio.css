@@ -1,0 +1,165 @@
+body {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(11, 61, 145, 1) 100%);
+    font-family: "Calibri";
+    /*Just testing fonts*/
+}
+
+/*Todo lo referente al estilo del header*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+header img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 10px;
+}
+
+header nav {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.cuerpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja {
+    border-style: groove;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    margin: 5%;
+}
+/*Referente al footer*/
+
+footer {
+    text-align: center;
+    border-top: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    padding: 5px;
+}
+
+footer nav a {
+    margin-right: 2px;
+}
+
+/*Tablet menu en modo pc*/
+
+.tablet {
+    visibility: hidden;
+}
+
+/*Mobile menu en modo pc*/
+
+.mobile {
+    display: none;
+}
+
+/* Breakpoints */
+
+/* Versión Tablet */
+
+@media only screen and (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+    header {
+        justify-content: unset;
+    }
+    .columnaderecha {
+        display: none;
+    }
+    .columnacent {
+        width: 75%;
+    }
+    .tema img {
+        display: none;
+    }
+    .videos {
+        flex-direction: column;
+    }
+    .videos video {
+        order: 1;
+        margin-top: auto;
+        max-width: 100%;
+    }
+    .tablet {
+        visibility: visible;
+    }
+}
+
+/* Versión Móvil  */
+
+@media only screen and (max-width: 600px) {
+    
+    h1 {
+        margin-left:10px ;
+    }
+
+    .logo{
+        display: none;
+    }
+    .columnaderecha {
+        display: none;
+    }
+    .columnaizquierda {
+        display: none;
+    }
+    .columnacent {
+        width: 100%;
+    }
+    .columnacent
+    
+    .info-tema p{
+        display: none;
+    }
+    .info-videos p{
+        display:none;
+    }
+    .dropbtn img {
+        max-width: 30px;
+        max-height: 30px;
+        margin:0px;
+        border: none;
+    }
+    .mobile {
+        position: relative;
+        display: inline-block;
+    }
+    .mobile-content {
+        display: none;
+        position: absolute;
+        background-color: #0a93e2e7;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    .mobile-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+    }
+    .mobile-content a:hover {
+        background-color: rgb(129, 128, 128);
+    }
+    .mobile:hover .mobile-content {
+        display: block;
+    }
+}
