@@ -39,6 +39,8 @@ header nav {
 }
 
 .caja {
+    display: flex;
+    flex-direction: column;
     border-style: groove;
     padding-top: 1%;
     padding-left: 5%;
@@ -46,6 +48,24 @@ header nav {
     padding-right: 5%;
     margin: 5%;
 }
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario > input{
+    margin-top: 5%;
+}
+
+.formulario > select{
+    margin-top: 5%;
+}
+
+#grado {
+    display: none;
+}
+
 /*Referente al footer*/
 
 footer {

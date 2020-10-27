@@ -37,16 +37,39 @@
          </nav>
       </header>
       <div class="cuerpo">
-        <div class="caja">
-          <form class="formulario">
-              <h3>Identificación de Usuario</h3>
-              <input type="text" placeholder="correo electrónico" required>
-              <input type="password" placeholder="contraseña" required>
-              <input type="submit" value="Iniciar Sesión">
-            </form> 
-            <a href="registro.html" title="Registrarse">Registrarse</a>
-        </div>
-    </div>
+          <div class="caja">
+              <form class="formulario"> 
+                <h3>Información de la Cuenta</h3>
+                <input  placeholder="nombre de usuario" type="text" id="usuario" required>
+                <input  placeholder="NIA" type="text" id="NIA" required>
+                <input  placeholder="contraseña" type="password" id="contraseña"  required>
+                <h3>Datos Personales</h3>
+                <input  placeholder="nombre" type="text" id="nombre" required>
+                <input  placeholder="apellido1" type="text" id="apellido1" required>
+                <input  placeholder="apellido2" type="text" id="apellido2" required>
+                <input  placeholder="email" type="text" id="email" required>
+                <input  type="date" id="fechaNacimiento" required>
+                <input  placeholder="DNI" type="text" id="DNI" required>
+                <select id="rols" name="rols"  required>
+                   <option value="Administrador">Administrador</option>
+                   <option value="Profesor">Profesor</option>
+                   <option value="Estudiante">Estudiante</option>
+                </select>
+                <select id="grado" name="grados"  required>
+               </select>
+                <select id="idioma" name="idiomas">
+                  <option value="" selected>---Escoger un Idioma---</option>
+                  <option value="Español">Español</option>
+                  <option value="Ingles">Ingles</option>
+                  <option value="italiano">Italiano</option>
+               </select>
+               <input type="checkbox" id="condiciones" required>
+               <label for="condiciones">He leído y acepto las condiciones de uso</label>
+               <input type="submit" value="Guardar" id="guardar">
+               <input type="submit" value="Borrar" id="borrar">
+              </form>
+          </div>
+      </div>
       <footer>
          <nav>
             <a href="https://www.uc3m.es/Inicio" title="UC3M" target="_blank">UC3M</a>

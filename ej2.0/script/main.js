@@ -5,7 +5,26 @@ $(function(){
     $("#tabla_exportar").tableToCSV();
   });
 });
+//Para que aparezca el grado si la opción es estudiante
+$(function(){
+  $("#rols").change(function() {
+    var val = $(this).val();
+    if (val == "Estudiante"){
+      $("#grado").show()
+      $("#grado").html("<option value='' selected disabled>---Escoger un Grado---</option> <option value='Informatica'>Informatica</option> <option value='ADE'>ADE</option> <option value='Derecho'>Derecho</option>")
+    } else {
+      $("#grado").hide()
+    }
+  });
+});
 
+//para resetear el form
+$(function(){
+  $("#borrar").click(function(){
+    $('.formulario')[0].reset();
+  });
+});
+//Abrir email cliente
 function enviarMensaje(mail) {
   window.open("mailto:" + mail)
 }
