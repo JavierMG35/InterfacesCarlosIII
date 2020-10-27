@@ -305,3 +305,14 @@ footer nav a {
         display: block;
     }
 }
+
+/*Calendario*/
+.yellow > a { 
+    background-color: yellow !important;
+    background-image:none !important;
+}
+
+.green > a { 
+    background-color: green !important;
+    background-image: none !important;
+}

@@ -1,5 +1,5 @@
 
-//Funcionaldiad botón exportar
+//Funcionalidad botón exportar
 $(function(){
   $("#exportar").click(function(){
     $("#tabla_exportar").tableToCSV();
@@ -28,6 +28,38 @@ $(function(){
 function enviarMensaje(mail) {
   window.open("mailto:" + mail)
 }
+
+// Calendario 
+
+var Event = function (text, className) {
+  this.text = text;
+  this.className = className;
+};
+
+var events = {};
+events[new Date("11/11/2020")] = new Event("Presentación Cohetes", "green");
+events[new Date("11/06/2020")] = new Event("Examen 3 FA", "yellow");
+events[new Date("11/04/2020")] = new Event("IPM Entrega Práctica Final", "green");
+
+console.dir(events);
+
+$(function () {
+  $("#calendar").datepicker({
+      showButtonPanel:true,
+      currentText: "Hoy",
+      beforeShowDay: function (date) {
+          var event = events[date];
+          if (event) {
+              return [true, event.className, event.text];
+          }
+          else {
+              return [true, '', ''];
+          }
+      }
+  });
+})
+
+
 
 function displayClases() {
     document.getElementsByClassName("clases")[0].style.display = "block"
