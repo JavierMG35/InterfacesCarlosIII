@@ -48,14 +48,21 @@ header nav {
     padding-right: 5%;
     margin: 5%;
 }
-
-#inicioSesion {
+#registro {
     display: flex;
     flex-direction: column;
 }
 
-#inicioSesion > input{
+#registro > input{
     margin-top: 5%;
+}
+
+#registro > select{
+    margin-top: 5%;
+}
+
+#grado {
+    display: none;
 }
 
 /*Referente al footer*/
