@@ -27,6 +27,7 @@ $(function(){
 
 //Añado las expresiones regulares para el NIA
 $(function(){
+  
 });
 
 //Validación del form registro
@@ -43,7 +44,7 @@ $(function(){
       },
       contraseña: {
         required: true,
-        pattern:/\w*\d/,
+        pattern:/\d*[a-z]\d*/,
         maxlength: 8
       },
       nombre: {
@@ -76,6 +77,28 @@ $(function(){
 //Abrir email cliente
 function enviarMensaje(mail) {
   window.open("mailto:" + mail)
+}
+
+//Funcion para obtener los datos de un formulario y crear una cookie
+$(function(){
+  $("#guardar").click(function(){
+    if ($("#registro").valid()) {
+      var cvalue = decodeURIComponent($("#registro").serialize());
+      var cname = cvalue.split("&")[1].split("=")[1];
+      console.log(cname);
+      console.log(typeof(cvalue));
+      var exdays = 30;
+      setCookie(cname,cvalue,exdays);
+    }
+  });
+});
+
+//Crear cookies
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 // Calendario 
