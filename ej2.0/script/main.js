@@ -21,7 +21,56 @@ $(function(){
 //para resetear el form
 $(function(){
   $("#borrar").click(function(){
-    $('.formulario')[0].reset();
+    $('#registro')[0].reset();
+  });
+});
+
+//Añado las expresiones regulares para el NIA
+$(function(){
+});
+
+//Validación del form registro
+$(function(){
+  $("#registro").validate({
+    rules : {
+      usuario: {
+        required: true
+      },
+      NIA: {
+        required: true,
+        number: true,
+        pattern: /^(100)([0-9]{6})$/
+      },
+      contraseña: {
+        required: true,
+        pattern:/\w*\d/,
+        maxlength: 8
+      },
+      nombre: {
+        required: true
+      },
+      apellido1: {
+        required: true
+      },
+      apellido2: {
+        required: true
+      },
+      email: {
+        required: true
+      },
+      fechaNacimiento: {
+        requried: true
+      },
+      DNI: {
+        required: true
+      },
+      rols: {
+        required: true
+      },
+      condiciones: {
+        required: true
+      }
+    }
   });
 });
 //Abrir email cliente

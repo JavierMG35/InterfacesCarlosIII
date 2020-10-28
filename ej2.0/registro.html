@@ -5,10 +5,12 @@
       <!--Para escalar-->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="style/inicio.css">
+      <link rel="stylesheet" type="text/css" href="style/registro.css">
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
       <script src="http://www.jqueryscript.net/demo/jQuery-Plugin-To-Convert-HTML-Table-To-CSV-tabletoCSV/jquery.tabletoCSV.js"></script> <!--Plugin excel-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script><!--Plugin validator-->
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.js"></script><!--Plugin validator regex-->
       <script src="script/main.js"></script>      
       <title>NASA Fundamentals Class</title>
    </head>
@@ -38,32 +40,33 @@
       </header>
       <div class="cuerpo">
           <div class="caja">
-              <form class="formulario"> 
+              <form id="registro" action=#> 
                 <h3>Información de la Cuenta</h3>
-                <input  placeholder="nombre de usuario" type="text" id="usuario" required>
-                <input  placeholder="NIA" type="text" id="NIA" required>
-                <input  placeholder="contraseña" type="password" id="contraseña"  required>
+                <input  placeholder="nombre de usuario" type="text" name="usuario" id="usuario">
+                <input  placeholder="NIA" type="text" name="NIA" id="NIA">
+                <input  placeholder="contraseña" type="password" name="contraseña" id="contraseña">
                 <h3>Datos Personales</h3>
-                <input  placeholder="nombre" type="text" id="nombre" required>
-                <input  placeholder="apellido1" type="text" id="apellido1" required>
-                <input  placeholder="apellido2" type="text" id="apellido2" required>
-                <input  placeholder="email" type="text" id="email" required>
-                <input  type="date" id="fechaNacimiento" required>
-                <input  placeholder="DNI" type="text" id="DNI" required>
-                <select id="rols" name="rols"  required>
+                <input  placeholder="nombre" type="text" name="nombre" id="nombre">
+                <input  placeholder="apellido1" type="text" name="apellido1" id="apellido1">
+                <input  placeholder="apellido2" type="text" name="apellido2" id="apellido2">
+                <input  placeholder="email" type="email" name="email" id="email">
+                <input  type="date" id="fechaNacimiento" name="fechaNciemiento">
+                <input  placeholder="DNI" type="text" name="DNI" id="DNI">
+                <select id="rols" name="rols">
                    <option value="Administrador">Administrador</option>
                    <option value="Profesor">Profesor</option>
                    <option value="Estudiante">Estudiante</option>
                 </select>
-                <select id="grado" name="grados"  required>
+                <select id="grado" name="grados">
                </select>
+               <input type="text" value="UC3M" name="uni" id="uni" readonly required>
                 <select id="idioma" name="idiomas">
                   <option value="" selected>---Escoger un Idioma---</option>
                   <option value="Español">Español</option>
                   <option value="Ingles">Ingles</option>
                   <option value="italiano">Italiano</option>
                </select>
-               <input type="checkbox" id="condiciones" required>
+               <input type="checkbox" name="condiciones" id="condiciones">
                <label for="condiciones">He leído y acepto las condiciones de uso</label>
                <input type="submit" value="Guardar" id="guardar">
                <input type="button" value="Borrar" id="borrar">
