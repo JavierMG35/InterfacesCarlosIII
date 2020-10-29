@@ -44,7 +44,7 @@ $(function(){
       },
       contraseña: {
         required: true,
-        pattern:/\d*[a-z]\d*/,
+        pattern:/(?=.?[0-9])(?=.?[a-z]).+/,
         maxlength: 8
       },
       nombre: {
@@ -63,7 +63,9 @@ $(function(){
         requried: true
       },
       DNI: {
-        required: true
+        required: true,
+        pattern: /(\d{8})([-]?)([A-Z]{1})/,
+        maxlength: 8
       },
       rols: {
         required: true
