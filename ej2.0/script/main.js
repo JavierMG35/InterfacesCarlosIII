@@ -119,12 +119,6 @@ function getContraseñaCookie(cname){
       }
     });
   });
-
-$(function(){
-  $("#prueba").click(function(){
-    console.log(document.cookie);
-  });
-});
 //Crear cookies
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
