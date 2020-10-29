@@ -9,8 +9,6 @@
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
       <script src="http://www.jqueryscript.net/demo/jQuery-Plugin-To-Convert-HTML-Table-To-CSV-tabletoCSV/jquery.tabletoCSV.js"></script> <!--Plugin excel-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script><!--Plugin validator-->
-      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.js"></script><!--Plugin validator regex-->
       <script src="script/main.js"></script>      
       <title>NASA Fundamentals Class</title>
    </head>
@@ -40,19 +38,19 @@
       </header>
       <div class="cuerpo">
           <div class="caja">
-              <form id="registro" action=""  onsubmit="return $('#registro').valid()" method="POST"> 
+              <form id="registro" name="registro" action=""  onsubmit="return (validateForm())" method="POST"> 
                 <h3>Información de la Cuenta</h3>
-                <input  placeholder="nombre de usuario" type="text" name="usuario" id="usuario">
-                <input  placeholder="NIA" type="text" name="NIA" id="NIA">
-                <input  placeholder="contraseña" type="password" name="contraseña" id="contraseña">
+                <input  placeholder="nombre de usuario" type="text" name="usuario" id="usuario" required>
+                <input  placeholder="NIA" type="text" name="NIA" id="NIA" required pattern="^(100)([0-9]{6})$"> 
+                <input  placeholder="contraseña" type="password" name="contraseña" id="contraseña" required pattern="^(?=.*[0-9])(?=.*[a-z])([a-z0-9]+)$" maxlength="8">
                 <h3>Datos Personales</h3>
-                <input  placeholder="nombre" type="text" name="nombre" id="nombre">
-                <input  placeholder="apellido1" type="text" name="apellido1" id="apellido1">
-                <input  placeholder="apellido2" type="text" name="apellido2" id="apellido2">
-                <input  placeholder="email" type="email" name="email" id="email">
-                <input  type="date" id="fechaNacimiento" name="fechaNciemiento">
-                <input  placeholder="DNI" type="text" name="DNI" id="DNI">
-                <select id="rols" name="rols">
+                <input  placeholder="nombre" type="text" name="nombre" id="nombre" required>
+                <input  placeholder="apellido1" type="text" name="apellido1" id="apellido1" required>
+                <input  placeholder="apellido2" type="text" name="apellido2" id="apellido2" required>
+                <input  placeholder="email" type="email" name="email" id="email" required pattern="(.+)@(.+){2,}\.(.+){2,}">
+                <input  type="date" id="fechaNacimiento" name="fechaNciemiento" required>
+                <input  placeholder="DNI" type="text" name="DNI" id="DNI" required pattern="(\d{8})([-]?)([A-Z]{1})" maxlength="10"/>
+                <select id="rols" name="rols" required>
                    <option value="Administrador">Administrador</option>
                    <option value="Profesor">Profesor</option>
                    <option value="Estudiante">Estudiante</option>
@@ -66,9 +64,9 @@
                   <option value="Ingles">Ingles</option>
                   <option value="italiano">Italiano</option>
                </select>
-               <input type="checkbox" name="condiciones" id="condiciones">
+               <input type="checkbox" name="condiciones" id="condiciones" required>
                <label for="condiciones">He leído y acepto las condiciones de uso</label>
-               <input type="submit" value="Guardar" id="guardar">
+               <input type="submit" value="Guardar" id="guardar" onclick="validateForm()">
                <input type="button" value="Borrar" id="borrar">
               </form>
           </div>

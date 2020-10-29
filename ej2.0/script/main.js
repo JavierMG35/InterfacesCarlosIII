@@ -25,57 +25,6 @@ $(function(){
   });
 });
 
-//Añado las expresiones regulares para el NIA
-$(function(){
-  
-});
-
-//Validación del form registro
-$(function(){
-  $("#registro").validate({
-    rules : {
-      usuario: {
-        required: true
-      },
-      NIA: {
-        required: true,
-        number: true,
-        pattern: /^(100)([0-9]{6})$/
-      },
-      contraseña: {
-        required: true,
-        pattern:/(?=.?[0-9])(?=.?[a-z]).+/,
-        maxlength: 8
-      },
-      nombre: {
-        required: true
-      },
-      apellido1: {
-        required: true
-      },
-      apellido2: {
-        required: true
-      },
-      email: {
-        required: true
-      },
-      fechaNacimiento: {
-        requried: true
-      },
-      DNI: {
-        required: true,
-        pattern: /(\d{8})([-]?)([A-Z]{1})/,
-        maxlength: 8
-      },
-      rols: {
-        required: true
-      },
-      condiciones: {
-        required: true
-      }
-    }
-  });
-});
 //Abrir email cliente
 function enviarMensaje(mail) {
   window.open("mailto:" + mail)
@@ -87,7 +36,7 @@ $(function(){
     var cvalue = decodeURIComponent($("#registro").serialize());
     var cname = cvalue.split("&")[6].split("=")[1];
     var exdays = 30;
-    if ($("#registro").valid()) {
+    if (validateForm()) {
       if(!getCookie(cname)) {
         setCookie(cname,cvalue,exdays);
       } else {
@@ -192,6 +141,87 @@ $(function () {
   });
 })
 
+//Validación del form registro
+function validateForm(){
+  var usuario = document.forms["registro"]["usuario"];
+  var NIA = document.forms["registro"]["NIA"];
+  let re1 = new RegExp("^(100)([0-9]{6})$");
+  var contraseña = document.forms["registro"]["contraseña"];
+  let re2 = new RegExp("^(?=.*[0-9])(?=.*[a-z])([a-z0-9]+)$");
+  var nombre = document.forms["registro"]["nombre"];
+  var apellido1 = document.forms["registro"]["apellido1"];
+  var apellido2 = document.forms["registro"]["apellido2"];
+  var email = document.forms["registro"]["email"];
+  let re3 = new RegExp('(.+)@(.+){2,}\.(.+){2,}');
+  var fecha = document.forms["registro"]["fechaNacimiento"];
+  var DNI  = document.forms["registro"]["DNI"];
+  let re4 = new RegExp("([0-9]{8})([-]?)([A-Z]{1})");
+  var rol  = document.forms["registro"]["rols"];
+  var uni  = document.forms["registro"]["uni"];
+  var condiciones = document.getElementById("condiciones")
+
+  if (usuario.value === "") {
+    window.alert("Please enter your username.");
+    usuario.focus();
+    return false;
+  }
+  if (NIA.value === "" || !re1.test(NIA.value)){
+    window.alert("Please check the format of your NIA");
+    NIA.focus();
+    return false;
+  }
+  if (contraseña.value == "" || !re2.test(contraseña.value) || contraseña.value.length > 8){
+    window.alert("Password must contain at leas 1 number and 1 character and must be less than 8 character long");
+    contraseña.focus();
+    return false;
+  }
+  if (nombre.value === "") {
+    window.alert("Please enter your name.");
+    nombre.focus();
+    return false;
+  }
+  if (apellido1.value === "") {
+    window.alert("Please enter your lastname1.");
+    apellido1.focus();
+    return false;
+  }
+  if (apellido2.value === "") {
+    window.alert("Please enter your lastname2.");
+    apellido2.focus();
+    return false;
+  }
+  if (email.value === "" || !re3.test(email.value)){
+    window.alert("Please provide a valid email");
+    email.focus();
+    return false;
+  }
+  if (fecha.value === "") {
+    window.alert("Please enter your birthday");
+    fecha.focus();
+    return false;
+  }
+  if (DNI.value === "" || !re4.test(DNI.value) || DNI.value.length > 10){
+    window.alert("Please enter a valid ID");
+    DNI.focus();
+    return false;
+  }
+  if (rol.value === "") {
+    window.alert("Please enter a rol");
+    rol.focus();
+    return false;
+  }
+  if (uni.value === "") {
+    window.alert("Please enter a uni");
+    uni.focus();
+    return false;
+  }
+  if (!condiciones.checked) {
+    window.alert("Please accept condiciones de uso");
+    condiciones.focus();
+    return false;
+  }
+  return true
+}
 
 
 function displayClases() {
