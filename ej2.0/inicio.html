@@ -39,11 +39,11 @@
       </header>
       <div class="cuerpo">
         <div class="caja">
-          <form id="inicioSesion">
+          <form id="inicioSesion" action="class.html" method="POST">
               <h3>Identificación de Usuario</h3>
-              <input type="email" placeholder="correo electrónico" required>
-              <input type="password" placeholder="contraseña" required>
-              <input type="submit" value="Iniciar Sesión">
+              <input type="email" placeholder="correo electrónico" name="email" required>
+              <input type="password" placeholder="contraseña" name="contraseña" required>
+              <input type="submit" id="iniciarSesion" value="Iniciar Sesión">
             </form> 
             <a href="registro.html" title="Registrarse">Registrarse</a>
         </div>

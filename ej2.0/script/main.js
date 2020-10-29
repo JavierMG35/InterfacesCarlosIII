@@ -79,20 +79,52 @@ function enviarMensaje(mail) {
   window.open("mailto:" + mail)
 }
 
-//Funcion para obtener los datos de un formulario y crear una cookie
+//Funcion para obtener los datos de un formulario y crear una cookie si se puede
 $(function(){
-  $("#guardar").click(function(){
+  $("#registro").submit(function(){
+    var cvalue = decodeURIComponent($("#registro").serialize());
+    var cname = cvalue.split("&")[6].split("=")[1];
+    var exdays = 30;
     if ($("#registro").valid()) {
-      var cvalue = decodeURIComponent($("#registro").serialize());
-      var cname = cvalue.split("&")[1].split("=")[1];
-      console.log(cname);
-      console.log(typeof(cvalue));
-      var exdays = 30;
-      setCookie(cname,cvalue,exdays);
-    }
+      if(!getCookie(cname)) {
+        setCookie(cname,cvalue,exdays);
+      } else {
+        window.alert("El email: " + cname + " ya está en uso prueba con otro");
+      }
+      
+    } 
   });
 });
+//Funcion para obtener la contraseña de una cookie
+function getContraseñaCookie(cname){
+  var cvalue = getCookieValue(cname);
+  var ccontraseña = cvalue.split("&")[2].split("=")[1];
+  return ccontraseña;
+}
+//Funcion para obtener los datos del formulario de inicio de sesión e iniciar sesión si son correctos
+  $(function(){
+    $("#inicioSesion").submit(function(){
+      var form = decodeURIComponent($("#inicioSesion").serialize());
+      var cname = form.split("&")[0].split("=")[1];
+      var contraseña = form.split("&")[1].split("=")[1];
+      console.log("Cookies" + document.cookie);
+      console.log(contraseña);
+  
+      if(getCookie(cname) && contraseña === getContraseñaCookie(cname)){
+        console.log("Se ha iniciado sesión");
+        return true
+      }else{
+        window.alert("Email o contraseña incorrectos porfavor compruebe los datos introducidos");
+        return false
+      }
+    });
+  });
 
+$(function(){
+  $("#prueba").click(function(){
+    console.log(document.cookie);
+  });
+});
 //Crear cookies
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
@@ -101,6 +133,39 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+//Get Cookies si existe una cookie con cname devuelve true en cualquier otro caso false
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return true
+    }
+  }
+  return false;
+}
+
+//get the value of a cookie
+function getCookieValue(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 // Calendario 
 
 var Event = function (text, className) {
