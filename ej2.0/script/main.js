@@ -1,4 +1,3 @@
-
 //Funcionalidad botón exportar
 $(function(){
   $("#exportar").click(function(){
@@ -46,27 +45,33 @@ $(function(){
     } 
   });
 });
+
 //Funcion para obtener la contraseña de una cookie
 function getContraseñaCookie(cname){
   var cvalue = getCookieValue(cname);
   var ccontraseña = cvalue.split("&")[2].split("=")[1];
   return ccontraseña;
 }
+//Función para obtener el usuario de una cookie
+function getUsuarioCookie(cname){
+  var cvalue = getCookieValue(cname);
+  var cusuario = cvalue.split("&")[0].split("=")[1];
+  return cusuario;
+}
+
 //Funcion para obtener los datos del formulario de inicio de sesión e iniciar sesión si son correctos
   $(function(){
     $("#inicioSesion").submit(function(){
       var form = decodeURIComponent($("#inicioSesion").serialize());
       var cname = form.split("&")[0].split("=")[1];
       var contraseña = form.split("&")[1].split("=")[1];
-      console.log("Cookies" + document.cookie);
-      console.log(contraseña);
-  
       if(getCookie(cname) && contraseña === getContraseñaCookie(cname)){
         console.log("Se ha iniciado sesión");
+        setCookie("actual",cname,30);
         return true
       }else{
         window.alert("Email o contraseña incorrectos porfavor compruebe los datos introducidos");
-        return false
+        return false;
       }
     });
   });
@@ -94,7 +99,12 @@ function getCookie(cname) {
   }
   return false;
 }
-
+function cambiarClases() {
+  var email = getCookieValue("actual");
+  var cvalue = getCookieValue(email);
+  var usuario = cvalue.split("&")[0].split("=")[1];
+  $("#username").append(usuario);
+}
 //get the value of a cookie
 function getCookieValue(cname) {
   var name = cname + "=";
@@ -251,4 +261,3 @@ function displayGrades() {
     document.getElementsByClassName("calificaciones")[0].style.display = "block"
     document.getElementsByClassName("listado")[0].style.display = "none"
 }
-

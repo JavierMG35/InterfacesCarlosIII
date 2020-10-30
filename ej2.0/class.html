@@ -15,7 +15,7 @@
       <script src="script/main.js"></script>      
       <title>NASA Fundamentals Class</title>
    </head>
-   <body>
+   <body onload="cambiarClases()">
       <header>
          <div class="mobile">
             <button class="dropbtn"><img src="images/hamburguericon.png" alt="mobilemenu"></button>
@@ -29,12 +29,16 @@
          </div>
          <a class="logo" href="#c8"  onclick = "displayClases()"><img src="images/logo.png" alt="logo"></a>
          <h1>NASA Fundamentals Class</h1>
+         <div class="avatar">
+            <img src="images/avatar.jpg" alt="avatar">
+            <h4 id="username"></h4>
+         </div>
          <nav>
             <table>
                <tr>
                   <td><a href="#c7"  onclick = "displayClases()" title="Home">Home</a></td>
                   <td><a href="https://www.nasa.gov/" title="Opt2">NASA</a></td>
-                  <td><a href="https://www.wooclap.com/es/" title="Opt3">Wooclap</a></td>
+                  <td><a href="inicio.html" title="cerrar sesion ">Cerrar Sesión</a></td>
                </tr>
             </table>
          </nav>
