@@ -49,14 +49,20 @@
                <tr>
                   <th>NASA Fundamentals Class</th>
                </tr>
-               <tr>
+               <tr id="roladmin1">
                   <td><a href="#c6" onclick = "displayStudents()" title="Students">Students</a></td>
+               </tr>
+               <tr id="rolstudent1">
+                  <td><a href="#c7" onclick = "displayStudents()" title="Students">Mis Asignaturas</a></td></td>
                </tr>
                <tr>
                   <td><a href="#c5" onclick = "displayForum()" title="Forum">Forum</a></td>
                </tr>
-               <tr>
+               <tr id="roladmin2">
                   <td><a href="#c4" onclick = "displayGrades()" title="Grades">Grades</a></td>
+               </tr>
+               <tr id="rolstudent2">
+                  <td><a href="#c8" onclick = "displayGrades()" title="Grades">Mis Calificaciones</a></td>
                </tr>
                <tr>
                   <td><a href="#c3" onclick = "displayClases()" title="Clases">Clases</a></td>
@@ -72,21 +78,21 @@
          <div class="columnacent">
             <div class = "listado">
                 <h3>Listado de Estudiantes</h3>
-                <div class="student">
+                <div class="student" id="Alicia">
                    <img src="images/student1.png" alt="student1">
                    <b>Nombre:</b> Alicia Martínez Sánchez
                    <b>Fecha de nacimiento:</b> 22/04/1990
                    <b>Email:</b> aliciamartinezsanchez@gmail.com
                    <b>Enviar Mensaje: <input name="Mensaje" onclick="enviarMensaje('aliciamartinezsanchez@gmail.com')" placeholder="Escribe tu mensaje" type="text"></b>
                 </div>
-                <div class="student">
+                <div class="student" id="Juan">
                    <img src="images/student2.png" alt="student2">
                    <b>Nombre:</b> Juan Jerry Wong
                    <b>Fecha de nacimiento:</b> 20/04/2020
                    <b>Email:</b> jerryforlife@gmail.com
                    <b>Enviar Mensaje: <input name="Mensaje" onclick="enviarMensaje('jerryforlife@gmail.com')" placeholder="Escribe tu mensaje" type="text"></b>
                 </div>
-                <div class="student">
+                <div class="student" id="Apolo">
                    <img src="images/student3.png" alt="student3">
                    <b>Nombre:</b> Apolo Creed Balboa
                    <b>Fecha de nacimiento:</b> 01/01/1969

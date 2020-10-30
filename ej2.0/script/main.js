@@ -1,14 +1,14 @@
 //Funcionalidad botón exportar
-$(function(){
-  $("#exportar").click(function(){
+$(function () {
+  $("#exportar").click(function () {
     $("#tabla_exportar").tableToCSV();
   });
 });
 //Para que aparezca el grado si la opción es estudiante
-$(function(){
-  $("#rols").change(function() {
+$(function () {
+  $("#rols").change(function () {
     var val = $(this).val();
-    if (val == "Estudiante"){
+    if (val == "Estudiante") {
       $("#grado").show()
       $("#grado").html("<option value='' selected disabled>---Escoger un Grado---</option> <option value='Informatica'>Informatica</option> <option value='ADE'>ADE</option> <option value='Derecho'>Derecho</option>")
     } else {
@@ -18,8 +18,8 @@ $(function(){
 });
 
 //para resetear el form
-$(function(){
-  $("#borrar").click(function(){
+$(function () {
+  $("#borrar").click(function () {
     $('#registro')[0].reset();
   });
 });
@@ -30,56 +30,56 @@ function enviarMensaje(mail) {
 }
 
 //Funcion para obtener los datos de un formulario y crear una cookie si se puede
-$(function(){
-  $("#registro").submit(function(){
+$(function () {
+  $("#registro").submit(function () {
     var cvalue = decodeURIComponent($("#registro").serialize());
     var cname = cvalue.split("&")[6].split("=")[1];
     var exdays = 30;
     if (validateForm()) {
-      if(!getCookie(cname)) {
-        setCookie(cname,cvalue,exdays);
+      if (!getCookie(cname)) {
+        setCookie(cname, cvalue, exdays);
       } else {
         window.alert("El email: " + cname + " ya está en uso prueba con otro");
       }
-      
-    } 
+
+    }
   });
 });
 
 //Funcion para obtener la contraseña de una cookie
-function getContraseñaCookie(cname){
+function getContraseñaCookie(cname) {
   var cvalue = getCookieValue(cname);
   var ccontraseña = cvalue.split("&")[2].split("=")[1];
   return ccontraseña;
 }
 //Función para obtener el usuario de una cookie
-function getUsuarioCookie(cname){
+function getUsuarioCookie(cname) {
   var cvalue = getCookieValue(cname);
   var cusuario = cvalue.split("&")[0].split("=")[1];
   return cusuario;
 }
 
 //Funcion para obtener los datos del formulario de inicio de sesión e iniciar sesión si son correctos
-  $(function(){
-    $("#inicioSesion").submit(function(){
-      var form = decodeURIComponent($("#inicioSesion").serialize());
-      var cname = form.split("&")[0].split("=")[1];
-      var contraseña = form.split("&")[1].split("=")[1];
-      if(getCookie(cname) && contraseña === getContraseñaCookie(cname)){
-        console.log("Se ha iniciado sesión");
-        setCookie("actual",cname,30);
-        return true
-      }else{
-        window.alert("Email o contraseña incorrectos porfavor compruebe los datos introducidos");
-        return false;
-      }
-    });
+$(function () {
+  $("#inicioSesion").submit(function () {
+    var form = decodeURIComponent($("#inicioSesion").serialize());
+    var cname = form.split("&")[0].split("=")[1];
+    var contraseña = form.split("&")[1].split("=")[1];
+    if (getCookie(cname) && contraseña === getContraseñaCookie(cname)) {
+      console.log("Se ha iniciado sesión");
+      setCookie("actual", cname, 30);
+      return true
+    } else {
+      window.alert("Email o contraseña incorrectos porfavor compruebe los datos introducidos");
+      return false;
+    }
   });
+});
 //Crear cookies
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires="+d.toUTCString();
+  var expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -88,7 +88,7 @@ function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(";");
-  for(var i = 0; i <ca.length; i++) {
+  for (var i = 0; i < ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -99,18 +99,41 @@ function getCookie(cname) {
   }
   return false;
 }
-function cambiarClases() {
+//Función al iniciar la pagina de clases
+$(document).ready(function cambiarClases() {
   var email = getCookieValue("actual");
   var cvalue = getCookieValue(email);
   var usuario = cvalue.split("&")[0].split("=")[1];
+  var crol = cvalue.split("&")[9].split("=")[1];
   $("#username").append(usuario);
+
+  if (crol === "Estudiante") {
+    $("#rolstudent1").show()
+    $("#rolstudent2").show()
+    $("#roladmin1").hide()
+    $("#roladmin2").hide()
+    RolStudent(usuario);
+  }
+  else {
+    $("#rolstudent1").hide()
+    $("#rolstudent2").hide()
+  }
+})
+
+//Rol Estudiante
+function RolStudent(usuario) {
+  if (displayStudents().click) {
+    var clase = document.getElementById(usuario.value)
+    console.log(clase)
+  }
+  //innerHTML
 }
 //get the value of a cookie
 function getCookieValue(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
+  for (var i = 0; i < ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -121,8 +144,8 @@ function getCookieValue(cname) {
   }
   return "";
 }
-// Calendario 
 
+// Calendario 
 var Event = function (text, className) {
   this.text = text;
   this.className = className;
@@ -137,22 +160,22 @@ console.dir(events);
 
 $(function () {
   $("#calendar").datepicker({
-      showButtonPanel:true,
-      currentText: "Hoy",
-      beforeShowDay: function (date) {
-          var event = events[date];
-          if (event) {
-              return [true, event.className, event.text];
-          }
-          else {
-              return [true, '', ''];
-          }
+    showButtonPanel: true,
+    currentText: "Hoy",
+    beforeShowDay: function (date) {
+      var event = events[date];
+      if (event) {
+        return [true, event.className, event.text];
       }
+      else {
+        return [true, '', ''];
+      }
+    }
   });
 })
 
 //Validación del form registro
-function validateForm(){
+function validateForm() {
   var usuario = document.forms["registro"]["usuario"];
   var NIA = document.forms["registro"]["NIA"];
   let re1 = new RegExp("^(100)([0-9]{6})$");
@@ -164,10 +187,10 @@ function validateForm(){
   var email = document.forms["registro"]["email"];
   let re3 = new RegExp('(.+)@(.+){2,}\.(.+){2,}');
   var fecha = document.forms["registro"]["fechaNacimiento"];
-  var DNI  = document.forms["registro"]["DNI"];
+  var DNI = document.forms["registro"]["DNI"];
   let re4 = new RegExp("([0-9]{8})([-]?)([A-Z]{1})");
-  var rol  = document.forms["registro"]["rols"];
-  var uni  = document.forms["registro"]["uni"];
+  var rol = document.forms["registro"]["rols"];
+  var uni = document.forms["registro"]["uni"];
   var condiciones = document.getElementById("condiciones")
 
   if (usuario.value === "") {
@@ -175,12 +198,12 @@ function validateForm(){
     usuario.focus();
     return false;
   }
-  if (NIA.value === "" || !re1.test(NIA.value)){
+  if (NIA.value === "" || !re1.test(NIA.value)) {
     window.alert("Please check the format of your NIA");
     NIA.focus();
     return false;
   }
-  if (contraseña.value == "" || !re2.test(contraseña.value) || contraseña.value.length > 8){
+  if (contraseña.value == "" || !re2.test(contraseña.value) || contraseña.value.length > 8) {
     window.alert("Password must contain at leas 1 number and 1 character and must be less than 8 character long");
     contraseña.focus();
     return false;
@@ -200,7 +223,7 @@ function validateForm(){
     apellido2.focus();
     return false;
   }
-  if (email.value === "" || !re3.test(email.value)){
+  if (email.value === "" || !re3.test(email.value)) {
     window.alert("Please provide a valid email");
     email.focus();
     return false;
@@ -210,7 +233,7 @@ function validateForm(){
     fecha.focus();
     return false;
   }
-  if (DNI.value === "" || !re4.test(DNI.value) || DNI.value.length > 10){
+  if (DNI.value === "" || !re4.test(DNI.value) || DNI.value.length > 10) {
     window.alert("Please enter a valid ID");
     DNI.focus();
     return false;
@@ -233,31 +256,30 @@ function validateForm(){
   return true
 }
 
-
 function displayClases() {
-    document.getElementsByClassName("clases")[0].style.display = "block"
-    document.getElementsByClassName("forum")[0].style.display = "none"
-    document.getElementsByClassName("calificaciones")[0].style.display = "none"
-    document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("clases")[0].style.display = "block"
+  document.getElementsByClassName("forum")[0].style.display = "none"
+  document.getElementsByClassName("calificaciones")[0].style.display = "none"
+  document.getElementsByClassName("listado")[0].style.display = "none"
 }
 
 function displayStudents() {
-    document.getElementsByClassName("clases")[0].style.display = "none"
-    document.getElementsByClassName("forum")[0].style.display = "none"
-    document.getElementsByClassName("calificaciones")[0].style.display = "none"
-    document.getElementsByClassName("listado")[0].style.display = "block"
+  document.getElementsByClassName("clases")[0].style.display = "none"
+  document.getElementsByClassName("forum")[0].style.display = "none"
+  document.getElementsByClassName("calificaciones")[0].style.display = "none"
+  document.getElementsByClassName("listado")[0].style.display = "block"
 }
 
 function displayForum() {
-    document.getElementsByClassName("clases")[0].style.display = "none"
-    document.getElementsByClassName("forum")[0].style.display = "block"
-    document.getElementsByClassName("calificaciones")[0].style.display = "none"
-    document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("clases")[0].style.display = "none"
+  document.getElementsByClassName("forum")[0].style.display = "block"
+  document.getElementsByClassName("calificaciones")[0].style.display = "none"
+  document.getElementsByClassName("listado")[0].style.display = "none"
 }
 
 function displayGrades() {
-    document.getElementsByClassName("clases")[0].style.display = "none"
-    document.getElementsByClassName("forum")[0].style.display = "none"
-    document.getElementsByClassName("calificaciones")[0].style.display = "block"
-    document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("clases")[0].style.display = "none"
+  document.getElementsByClassName("forum")[0].style.display = "none"
+  document.getElementsByClassName("calificaciones")[0].style.display = "block"
+  document.getElementsByClassName("listado")[0].style.display = "none"
 }
