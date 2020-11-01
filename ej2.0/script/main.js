@@ -100,12 +100,12 @@ function getCookie(cname) {
   return false;
 }
 //Función al iniciar la pagina de clases
-function cambiarClases() {
+$(document).ready(function cambiarClases() {
   var email = getCookieValue("actual");
   var cvalue = getCookieValue(email);
   var usuario = cvalue.split("&")[0].split("=")[1];
   var crol = cvalue.split("&")[9].split("=")[1];
-  
+
   $("#username").append(usuario);
 
   if (crol === "Estudiante") {
@@ -113,12 +113,26 @@ function cambiarClases() {
     $("#rolstudent2").show()
     $("#roladmin1").hide()
     $("#roladmin2").hide()
+    document.getElementById("rolstudent1").addEventListener("click", RolStudent_clases)
+    document.getElementById("rolstudent2").addEventListener("click", RolStudent_grades)
+
   }
   else {
     $("#rolstudent1").hide()
     $("#rolstudent2").hide()
   }
+})
+
+//Rol Estudiante
+function RolStudent_clases() {
+  $('.videos').hide();
 }
+function RolStudent_grades() {
+  $('#tabla_exportar').hide();
+  $('#exportar').hide();
+  $('#misnotas').show();
+}
+
 //get the value of a cookie
 function getCookieValue(cname) {
   var name = cname + "=";
@@ -248,6 +262,7 @@ function validateForm() {
 }
 
 function displayClases() {
+  $('.videos').show();
   document.getElementsByClassName("clases")[0].style.display = "block"
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "none"
@@ -287,6 +302,7 @@ function displayForum() {
 }
 
 function displayGrades() {
+  $('#misnotas').hide()
   document.getElementsByClassName("clases")[0].style.display = "none"
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "block"
@@ -299,10 +315,10 @@ function displayGrades() {
 }
 
 
-function displayTema(id){
+function displayTema(id) {
   var tema = "#tema_foro" + id;
   $(".forum").hide();
-  $(tema).css("display","flex");
+  $(tema).css("display", "flex");
 }
 
 function enviar(id) {
@@ -311,12 +327,12 @@ function enviar(id) {
   var nombre = cookieActual.split("&")[3].split("=")[1];
   var apellido1 = cookieActual.split("&")[4].split("=")[1];
   var apellido2 = cookieActual.split("&")[5].split("=")[1];
-  var nombreCompleto = nombre + " " + apellido1 + " " +apellido2;
+  var nombreCompleto = nombre + " " + apellido1 + " " + apellido2;
   var d = new Date();
   var date = d.toLocaleString();
   var formulario = "#" + "form" + id;
   var titulo = "#" + "titulo" + id;
   var mensaje = decodeURIComponent($(formulario).serialize().split("=")[1]);
   var titulo = "RE: " + $(titulo).text();
-  $('<div class="mensaje"><div class="titulo_mensaje"><img src="images/avatar.jpg"><h4>' +titulo+ '</h4></div><div class="autor_mensaje"><h5>de ' + nombreCompleto + ' - ' + date +'</h5></div><div class="contenido"><p>'+ mensaje +'</p></div></div>').insertBefore("#enviar_foro" + id);
+  $('<div class="mensaje"><div class="titulo_mensaje"><img src="images/avatar.jpg"><h4>' + titulo + '</h4></div><div class="autor_mensaje"><h5>de ' + nombreCompleto + ' - ' + date + '</h5></div><div class="contenido"><p>' + mensaje + '</p></div></div>').insertBefore("#enviar_foro" + id);
 }
