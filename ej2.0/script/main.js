@@ -100,11 +100,12 @@ function getCookie(cname) {
   return false;
 }
 //Función al iniciar la pagina de clases
-$(document).ready(function cambiarClases() {
+function cambiarClases() {
   var email = getCookieValue("actual");
   var cvalue = getCookieValue(email);
   var usuario = cvalue.split("&")[0].split("=")[1];
   var crol = cvalue.split("&")[9].split("=")[1];
+  
   $("#username").append(usuario);
 
   if (crol === "Estudiante") {
@@ -112,21 +113,11 @@ $(document).ready(function cambiarClases() {
     $("#rolstudent2").show()
     $("#roladmin1").hide()
     $("#roladmin2").hide()
-    RolStudent(usuario);
   }
   else {
     $("#rolstudent1").hide()
     $("#rolstudent2").hide()
   }
-})
-
-//Rol Estudiante
-function RolStudent(usuario) {
-  if (displayStudents().click) {
-    var clase = document.getElementById(usuario.value)
-    console.log(clase)
-  }
-  //innerHTML
 }
 //get the value of a cookie
 function getCookieValue(cname) {
@@ -261,6 +252,12 @@ function displayClases() {
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "none"
   document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[1].style.display = "none"
+  document.getElementsByClassName("tema_foro")[2].style.display = "none"
+  document.getElementsByClassName("tema_foro")[3].style.display = "none"
+  document.getElementsByClassName("tema_foro")[4].style.display = "none"
+
 }
 
 function displayStudents() {
@@ -268,6 +265,12 @@ function displayStudents() {
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "none"
   document.getElementsByClassName("listado")[0].style.display = "block"
+  document.getElementsByClassName("tema_foro")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[1].style.display = "none"
+  document.getElementsByClassName("tema_foro")[2].style.display = "none"
+  document.getElementsByClassName("tema_foro")[3].style.display = "none"
+  document.getElementsByClassName("tema_foro")[4].style.display = "none"
+
 }
 
 function displayForum() {
@@ -275,6 +278,12 @@ function displayForum() {
   document.getElementsByClassName("forum")[0].style.display = "block"
   document.getElementsByClassName("calificaciones")[0].style.display = "none"
   document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[1].style.display = "none"
+  document.getElementsByClassName("tema_foro")[2].style.display = "none"
+  document.getElementsByClassName("tema_foro")[3].style.display = "none"
+  document.getElementsByClassName("tema_foro")[4].style.display = "none"
+
 }
 
 function displayGrades() {
@@ -282,4 +291,32 @@ function displayGrades() {
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "block"
   document.getElementsByClassName("listado")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[0].style.display = "none"
+  document.getElementsByClassName("tema_foro")[1].style.display = "none"
+  document.getElementsByClassName("tema_foro")[2].style.display = "none"
+  document.getElementsByClassName("tema_foro")[3].style.display = "none"
+  document.getElementsByClassName("tema_foro")[4].style.display = "none"
+}
+
+
+function displayTema(id){
+  var tema = "#tema_foro" + id;
+  $(".forum").hide();
+  $(tema).css("display","flex");
+}
+
+function enviar(id) {
+  var emailSesion = getCookieValue("actual");
+  var cookieActual = getCookieValue(emailSesion);
+  var nombre = cookieActual.split("&")[3].split("=")[1];
+  var apellido1 = cookieActual.split("&")[4].split("=")[1];
+  var apellido2 = cookieActual.split("&")[5].split("=")[1];
+  var nombreCompleto = nombre + " " + apellido1 + " " +apellido2;
+  var d = new Date();
+  var date = d.toLocaleString();
+  var formulario = "#" + "form" + id;
+  var titulo = "#" + "titulo" + id;
+  var mensaje = decodeURIComponent($(formulario).serialize().split("=")[1]);
+  var titulo = "RE: " + $(titulo).text();
+  $('<div class="mensaje"><div class="titulo_mensaje"><img src="images/avatar.jpg"><h4>' +titulo+ '</h4></div><div class="autor_mensaje"><h5>de ' + nombreCompleto + ' - ' + date +'</h5></div><div class="contenido"><p>'+ mensaje +'</p></div></div>').insertBefore("#enviar_foro" + id);
 }

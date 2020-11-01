@@ -228,31 +228,203 @@
                      <th>Fecha:</th>
                   </tr>
                   <tr>
-                     <td colspan="2">Need help with Project 1</td>
-                     <td>11 messages </td>
-                     <td>09/09/20 13:21</td>
+                     <td colspan="2"><a href="#c"onclick="displayTema('1')">Need help with Project 1</a></td>
+                     <td>2 messages </td>
+                     <td>29/10/20 09:22:22</td>
                   </tr>
                   <tr>
-                     <td colspan="2"><b>Additional Exercise</b></td>
+                     <td colspan="2"><a href="#c"onclick="displayTema('2')">Additional Excercise</a></td>
                      <td>1 message</td>
-                     <td>6/09/20 16:20</td>
+                     <td>6/09/20 16:20:00</td>
                   </tr>
                   <tr>
-                     <td colspan="2">Did you hear about life in Venus?</td>
+                     <td colspan="2"><a href="#c"onclick="displayTema('3')">Did you hear about life in Venus?</a></td>
                      <td>150 messages</td>
-                     <td>07/10/20 00:00</td>
+                     <td>07/10/20 00:00:40</td>
                   </tr>
                   <tr>
-                     <td colspan="2">Who eated Mr. Jeff sandwich??</td>
+                     <td colspan="2"><a href="#c"onclick="displayTema('4')">Who eated Mr. Jeff sandwich??</a></td>
                      <td>5 messages</td>
-                     <td>29/05/20 10:05</td>
+                     <td>29/05/20 10:05:00</td>
                   </tr>
                   <tr>
-                     <td colspan="2"><b>News and updates</b></td>
+                     <td colspan="2"><a href="#c"onclick="displayTema('5')">News and Updates</a></td>
                      <td>2 messages</td>
-                     <td>21/09/20</td>
+                     <td>21/09/20 13:30:31</td>
                   </tr>
                </table>
+            </div>
+            <div class="tema_foro" id="tema_foro1">
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student1.png">
+                     <h4 class="titulo_tema" id="titulo1">Need help with Project 1</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Alicia Martínez Sánchez - 28/10/2020 10:22:29</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>No entiendo muy bien como tenemos que entregar los ficheros de salida para la práctica 3 de la asignatura. Los necesitamos todos juntos?</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student2.png">
+                     <h4>RE: Need help with Project 1</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jerry Wong - 29/10/2020 09:22:29</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Buenas María, creo que solo es necesario entregar los archivos output del programa. Un saludo!</p>
+                  </div>
+               </div>
+               <div class="enviar_foro" id="enviar_foro1">
+                  <form id="form1" action="" onsubmit="return false" method="POST">
+                     <input name="Mensaje" placeholder="Escribe tu mensaje" type="text">
+                     <input type="submit" value="Enviar" onclick="enviar('1')"></input>
+                  </form>
+               </div>
+            </div>
+            <div class="tema_foro" id="tema_foro2">
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/profesor1.jpg">
+                     <h4 class="titulo_tema" id="titulo2">Additional Excersise</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jesus Profesor - 6/09/2020 16:20:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Os he subido un ejercicio adicional para que practiques un poco el tema de las ecuaciones diferenciales de calor y de onda. Mucho animo!</p>
+                  </div>
+               </div>
+               <div class="enviar_foro" id="enviar_foro2">
+                  <form id="form2" action="" onsubmit="return false" method="POST">
+                     <input name="Mensaje" placeholder="Escribe tu mensaje" type="text">
+                     <input type="submit" value="Enviar" onclick="enviar('2')"></input>
+                  </form>
+               </div>
+            </div>
+            <div class="tema_foro" id="tema_foro3">
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student4.png">
+                     <h4 class="titulo_tema" id="titulo3">Did you hear about life in Venus?</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Mike Wazowski - 07/10/2020 00:00:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Habeis visto las noticias de que han encontrado vida en Venus?! Yo creo que tiene que ser mentira pero no se parece muy convincente. ¿Vosotros que opinais?</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student1.png">
+                     <h4 class="titulo_tema">RE: Did you hear about life in Venus?</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Alicia Martínez Sánchez  - 08/09/2020 13:00:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>A mi la verdad que me cuesta mucho creermelo tambien! ¿Qué tipo de tecnologías podrían tener?</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student2.png">
+                     <h4 class="titulo_tema">RE: Did you hear about life in Venus?</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jerry Wong - 08/09/2020 14:00:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>No os creaís nada! Es el gobierno intentando engañarnos ya lo hicieron una vez con la luna!</p>
+                  </div>
+               </div>
+               <div class="enviar_foro" id="enviar_foro3">
+                  <form id="form3" action="" onsubmit="return false" method="POST">
+                     <input name="Mensaje" placeholder="Escribe tu mensaje" type="text">
+                     <input type="submit" value="Enviar" onclick="enviar('3')"></input>
+                  </form>
+               </div>
+            </div>
+            <div class="tema_foro" id="tema_foro4">
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/profesor1.jpg">
+                     <h4 class="titulo_tema" id="titulo4">Who eated Mr. Jeff sandwich??</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jesus Profesor - 29/05/2020 10:05:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Chicos no tiene ninguna gracia, esta mañana el profesor adjunto Jeff estaba muy disgustado de no encontrar su sandwich y esta muy seguro de que ha sido uno de vosotros</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student10.png">
+                     <h4 class="titulo_tema">RE: Who eated Mr. Jeff sandwich??</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Julie Andrews - 29/05/2020 13:05:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Yo creo que el último de salir de clase fué Apolo! Creo que ha sido él!</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/student3.png">
+                     <h4 class="titulo_tema">RE: Who eated Mr. Jeff sandwich??</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Apolo Creed Balboa - 29/05/2020 14:05:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>Yo no he sido! Además no se que dices Julie habia otra persona dentro del aula despues de que yo saliese!</p>
+                  </div>
+               </div>
+               <div class="enviar_foro" id="enviar_foro4">
+                  <form id="form4" action="" onsubmit="return false" method="POST">
+                     <input name="Mensaje" placeholder="Escribe tu mensaje" type="text">
+                     <input type="submit" value="Enviar" onclick="enviar('4')"></input>
+                  </form>
+               </div>
+            </div>
+            <div class="tema_foro" id="tema_foro5">
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/profesor1.jpg">
+                     <h4 class="titulo_tema" id="titulo5">News and Updates</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jesus Profesor - 21/09/2020 13:30:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>En este foro os iré subiendo las ultimas novedades referente a las clases por favor intentar estar atentos a mis posts. Un saludo!</p>
+                  </div>
+               </div>
+               <div class="mensaje">
+                  <div class="titulo_mensaje">
+                     <img src="images/profesor1.jpg">
+                     <h4 class="titulo_tema">RE: News and Updates</h4>
+                  </div>
+                  <div class="autor_mensaje">
+                     <h5>de Juan Jesus Profesor - 21/09/2020 13:30:00</h5>
+                  </div>
+                  <div class="contenido">
+                     <p>No voy a poder acudir a clase hoy creo que tengo el covid</p>
+                  </div>
+               </div>
+               <div class="enviar_foro" id="enviar_foro5">
+                  <form id="form5" action="" onsubmit="return false" method="POST">
+                     <input name="Mensaje" placeholder="Escribe tu mensaje" type="text">
+                     <input type="submit" value="Enviar" onclick="enviar('5')"></input>
+                  </form>
+               </div>
             </div>
             <div class="clases">
                <div class="tema">
