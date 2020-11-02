@@ -43,7 +43,7 @@
             <tr>
                <td><a href="#c7" onclick="displayClases()" title="Home">Home</a></td>
                <td><a href="https://www.nasa.gov/" title="Opt2">NASA</a></td>
-               <td><a href="inicio.html" title="cerrar sesion ">Cerrar Sesión</a></td>
+               <td><a href="inicio.html" onclick="return cerrarSesion()" title="cerrar sesion ">Cerrar Sesión</a></td>
             </tr>
          </table>
       </nav>
@@ -167,91 +167,98 @@
                      placeholder="Escribe tu mensaje" type="text"></b>
             </div>
          </div>
+
+
          <div class="calificaciones">
-            <table id="tabla_exportar">
-               <tr>
-                  <th>Estudiante</th>
-                  <th>Actividad 1</th>
-                  <th>Actividad 2</th>
-                  <th>Actividad 3</th>
-               </tr>
-               <tr>
-                  <td>Alicia Martínez Sánchez</td>
-                  <td>7.00</td>
-                  <td>6.00</td>
-                  <td>8.50</td>
-               </tr>
-               <tr>
-                  <td>Juan Jerry Wong</td>
-                  <td>2.50</td>
-                  <td>3.50</td>
-                  <td>4.55</td>
-               </tr>
-               <tr>
-                  <td>Apolo Creed Balboa</td>
-                  <td>7.75</td>
-                  <td>8.35</td>
-                  <td>9.25</td>
-               </tr>
-               <tr>
-                  <td>Mike Wazowski</td>
-                  <td>10.00</td>
-                  <td>10.00</td>
-                  <td>10.00</td>
-               </tr>
-               <tr>
-                  <td>Malena Malina</td>
-                  <td>5.00</td>
-                  <td>4.55</td>
-                  <td>6.00</td>
-               </tr>
-               <tr>
-                  <td>Juan Nuaj Jin</td>
-                  <td>6.90</td>
-                  <td>4.20</td>
-                  <td>6.66</td>
-               </tr>
-               <tr>
-                  <td>Quasi Modo Eiffel</td>
-                  <td>8.80</td>
-                  <td>7.77</td>
-                  <td>5.45</td>
-               </tr>
-               <tr>
-                  <td>Katerina Tolstoy Putin</td>
-                  <td>9.88</td>
-                  <td>7.35</td>
-                  <td>10.00</td>
-               </tr>
-               <tr>
-                  <td>Mr Profident</td>
-                  <td>10.00</td>
-                  <td>9.50</td>
-                  <td>7.75</td>
-               </tr>
-               <tr>
-                  <td>Julie Andrews</td>
-                  <td>7.50</td>
-                  <td>6.00</td>
-                  <td>5.00</td>
-               </tr>
-            </table>
-            <button id="exportar" data-export="export">Exportar</button>
-            <table id="misnotas">
-               <tr>
-                  <th>Foundations of Aerospace</th>
-                  <th>Fundamentals of System Engineering</th>
-                  <th>International Project Management</th>
-                  <th>Media del curso</th>
-               </tr>
-               <tr>
-                  <td>6.50</td>
-                  <td>7.00</td>
-                  <td>8.50</td>
-                  <td>7.33</td>
-               </tr>
-            </table>
-         </div>
+            <div id="tabla1">
+               <table id="tabla_exportar">
+                  <tr>
+                     <th>Estudiante</th>
+                     <th>Actividad 1</th>
+                     <th>Actividad 2</th>
+                     <th>Actividad 3</th>
+                  </tr>
+                  <tr>
+                     <td>Alicia Martínez Sánchez</td>
+                     <td>7.00</td>
+                     <td>6.00</td>
+                     <td>8.50</td>
+                  </tr>
+                  <tr>
+                     <td>Juan Jerry Wong</td>
+                     <td>2.50</td>
+                     <td>3.50</td>
+                     <td>4.55</td>
+                  </tr>
+                  <tr>
+                     <td>Apolo Creed Balboa</td>
+                     <td>7.75</td>
+                     <td>8.35</td>
+                     <td>9.25</td>
+                  </tr>
+                  <tr>
+                     <td>Mike Wazowski</td>
+                     <td>10.00</td>
+                     <td>10.00</td>
+                     <td>10.00</td>
+                  </tr>
+                  <tr>
+                     <td>Malena Malina</td>
+                     <td>5.00</td>
+                     <td>4.55</td>
+                     <td>6.00</td>
+                  </tr>
+                  <tr>
+                     <td>Juan Nuaj Jin</td>
+                     <td>6.90</td>
+                     <td>4.20</td>
+                     <td>6.66</td>
+                  </tr>
+                  <tr>
+                     <td>Quasi Modo Eiffel</td>
+                     <td>8.80</td>
+                     <td>7.77</td>
+                     <td>5.45</td>
+                  </tr>
+                  <tr>
+                     <td>Katerina Tolstoy Putin</td>
+                     <td>9.88</td>
+                     <td>7.35</td>
+                     <td>10.00</td>
+                  </tr>
+                  <tr>
+                     <td>Mr Profident</td>
+                     <td>10.00</td>
+                     <td>9.50</td>
+                     <td>7.75</td>
+                  </tr>
+                  <tr>
+                     <td>Julie Andrews</td>
+                     <td>7.50</td>
+                     <td>6.00</td>
+                     <td>5.00</td>
+                  </tr>
+               </table>
+               <button id="export" onclick="exportTable('tabla_exportar')">exportar</button>
+            </div>
+            <div id="tabla2">
+               <table id="misnotas">
+                  <tr>
+                     <th>Foundations of Aerospace</th>
+                     <th>Fundamentals of System Engineering</th>
+                     <th>International Project Management</th>
+                     <th>Media del curso</th>
+                  </tr>
+                  <tr>
+                     <td>6.50</td>
+                     <td>7.00</td>
+                     <td>8.50</td>
+                     <td>7.33</td>
+                  </tr>
+               </table>
+               <button id="export2" onclick="exportTable('misnotas')">exportar</button>
+            </div>
+         </div>         
          <div class="forum">
             <table>
                <tr>

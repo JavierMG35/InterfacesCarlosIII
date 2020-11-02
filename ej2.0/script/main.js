@@ -1,9 +1,13 @@
+//Funcionalidad cerrar sesión
+function cerrarSesion(){
+  return confirm('Estas seguro de que quieres cerrar sesison?');
+}
+
 //Funcionalidad botón exportar
-$(function () {
-  $("#exportar").click(function () {
-    $("#tabla_exportar").tableToCSV();
-  });
-});
+function exportTable(tabla){
+  tabla = "#" + tabla;
+  $(tabla).tableToCSV();
+}
 //Para que aparezca el grado si la opción es estudiante
 $(function () {
   $("#rols").change(function () {
@@ -128,9 +132,8 @@ function RolStudent_clases() {
   $('.videos').hide();
 }
 function RolStudent_grades() {
-  $('#tabla_exportar').hide();
-  $('#exportar').hide();
-  $('#misnotas').show();
+  $('#tabla1').hide();
+  $('#tabla2').show();
 }
 
 //get the value of a cookie
@@ -302,7 +305,7 @@ function displayForum() {
 }
 
 function displayGrades() {
-  $('#misnotas').hide()
+  $('#tabla2').hide()
   document.getElementsByClassName("clases")[0].style.display = "none"
   document.getElementsByClassName("forum")[0].style.display = "none"
   document.getElementsByClassName("calificaciones")[0].style.display = "block"
