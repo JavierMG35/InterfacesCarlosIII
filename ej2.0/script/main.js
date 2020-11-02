@@ -104,7 +104,7 @@ function getCookie(cname) {
   return false;
 }
 //Función al iniciar la pagina de clases
-$(document).ready(function cambiarClases() {
+function cambiarClases() {
   var email = getCookieValue("actual");
   var cvalue = getCookieValue(email);
   var usuario = cvalue.split("&")[0].split("=")[1];
@@ -125,7 +125,7 @@ $(document).ready(function cambiarClases() {
     $("#rolstudent1").hide()
     $("#rolstudent2").hide()
   }
-})
+}
 
 //Rol Estudiante
 function RolStudent_clases() {
