@@ -6,6 +6,7 @@ Nicolas Granados Sitges.
 Javier Moncada Gutierrez.
 
 TODO:
-    - mejorar lo que veamos
-    - preparar paquete subida (borrada carpeta pruebas mias xdd, eso ya se hara easy con javacript imagino)
+    - Quitar lo de la foto cuando te metes en clase que dices
+    - Estaría bien conseguir convertir en enlace el calendario
+    - Me he dado cuenta que desde el móvil no se puede cerrar sesión
 
