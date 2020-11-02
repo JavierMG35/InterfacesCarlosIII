@@ -1,10 +1,10 @@
 //Funcionalidad cerrar sesión
-function cerrarSesion(){
+function cerrarSesion() {
   return confirm('Estas seguro de que quieres cerrar sesison?');
 }
 
 //Funcionalidad botón exportar
-function exportTable(tabla){
+function exportTable(tabla) {
   tabla = "#" + tabla;
   $(tabla).tableToCSV();
 }
@@ -115,15 +115,19 @@ function cambiarClases() {
   if (crol === "Estudiante") {
     $("#rolstudent1").show()
     $("#rolstudent2").show()
-    $("#roladmin1").hide()
-    $("#roladmin2").hide()
+    $("#rolstudent3").show()
+    $("#rolstudent4").show()
+    $(".roladmin").hide()
     document.getElementById("rolstudent1").addEventListener("click", RolStudent_clases)
+    document.getElementById("rolstudent3").addEventListener("click", RolStudent_clases)
     document.getElementById("rolstudent2").addEventListener("click", RolStudent_grades)
-
+    document.getElementById("rolstudent4").addEventListener("click", RolStudent_grades)
   }
   else {
     $("#rolstudent1").hide()
     $("#rolstudent2").hide()
+    $("#rolstudent3").hide()
+    $("#rolstudent4").hide()
   }
 }
 
@@ -167,7 +171,7 @@ events[new Date("11/04/2020")] = new Event("IPM Entrega Práctica Final", "green
 console.dir(events);
 
 $(function () {
-  $("#calendar").datepicker({
+  $(".calendar").datepicker({
     showButtonPanel: true,
     currentText: "Hoy",
     beforeShowDay: function (date) {
@@ -181,6 +185,24 @@ $(function () {
     }
   });
 })
+
+//Icono hamburguesa
+$(function () {
+  var menuVisible = false;
+  $('.dropbtn').click(function () {
+    if (menuVisible) {
+      $('.mobile-content').css({ 'display': 'none' });
+      menuVisible = false;
+      return;
+    }
+    $('.mobile-content').css({ 'display': 'block' });
+    menuVisible = true;
+  });
+  $('.mobile-content').click(function () {
+    $(this).css({ 'display': 'none' });
+    menuVisible = false;
+  });
+});
 
 //Validación del form registro
 function validateForm() {

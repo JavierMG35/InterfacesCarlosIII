@@ -25,11 +25,14 @@
       <div class="mobile">
          <button class="dropbtn"><img src="images/hamburguericon.png" alt="mobilemenu"></button>
          <div class="mobile-content">
-            <a href="students.html" title="Students">Students</a>
-            <a href="forum.html" title="Forum">Forum</a>
-            <a href="grades.html" title="Grades">Grades</a>
+            <a href="#c3" onclick="displayClases()" title="Clases">Clases</a>
+            <a class="roladmin" href="#c12" onclick="displayStudents()" title="Students">Students</a>
+            <a id="rolstudent1" href="#c7" onclick="displayClases()" title="Students">Mis Asignaturas</a>
+            <a href="#c13" onclick="displayForum()" title="Forum">Forum</a>
+            <a class="roladmin" href="#c4" onclick="displayGrades()" title="Grades">Grades</a>
+            <a id="rolstudent2" href="#c8" onclick="displayGrades()" title="Grades">Mis Calificaciones</a>
             <a href=#c1 title="Last News">Last News</a>
-            <p>Next Events <input type="button" id="calendar"></p>
+            <p>Next Events <input type="button" class="calendar"></p>
          </div>
       </div>
       <a class="logo" href="#c8" onclick="displayClases()"><img src="images/logo.png" alt="logo"></a>
@@ -54,20 +57,20 @@
             <tr>
                <th>NASA Fundamentals Class</th>
             </tr>
-            <tr id="roladmin1">
+            <tr class="roladmin">
                <td><a href="#c6" onclick="displayStudents()" title="Students">Students</a></td>
             </tr>
-            <tr id="rolstudent1">
+            <tr id="rolstudent3">
                <td><a href="#c7" onclick="displayClases()" title="Students">Mis Asignaturas</a></td>
                </td>
             </tr>
             <tr>
                <td><a href="#c5" onclick="displayForum()" title="Forum">Forum</a></td>
             </tr>
-            <tr id="roladmin2">
+            <tr class="roladmin">
                <td><a href="#c4" onclick="displayGrades()" title="Grades">Grades</a></td>
             </tr>
-            <tr id="rolstudent2">
+            <tr id="rolstudent4">
                <td><a href="#c8" onclick="displayGrades()" title="Grades">Mis Calificaciones</a></td>
             </tr>
             <tr>
@@ -78,7 +81,7 @@
             </tr>
             <tr class="tablet">
                <td>
-                  <p>Next Events <input type="button" id="calendar"></p>
+                  <p>Next Events <input type="button" class="calendar"></p>
                </td>
             </tr>
          </table>
@@ -258,7 +261,7 @@
                </table>
                <button id="export2" onclick="exportTable('misnotas')">exportar</button>
             </div>
-         </div>         
+         </div>
          <div class="forum">
             <table>
                <tr>
@@ -604,7 +607,7 @@
          <table>
             <tr>
                <th>
-                  <p>Next Events <input type="button" id="calendar"></p>
+                  <p>Next Events <input type="button" class="calendar"></p>
                </th>
             </tr>
             <tr>
